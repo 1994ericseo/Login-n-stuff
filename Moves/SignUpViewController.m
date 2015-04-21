@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    //For dismissing keyboard
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
@@ -26,7 +26,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -83,6 +82,7 @@
 
 
 //HELPER FUNCTIONS
+
 - (void)SignUpProcess: (NSString*)username : (NSString*)password :(NSString*)email {
     PFUser *user = [PFUser user];
     user.username = username;

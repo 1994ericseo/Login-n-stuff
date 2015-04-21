@@ -16,9 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    //Code to dismiss Keyboard
+    //For dismissing keyboard
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
@@ -30,7 +28,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -79,6 +76,8 @@
         [self textFieldShouldReturn:PasswordField];
     }
 }
+
+//HELPER FUNCTIONS
 
 -(void)dismissKeyboard {
     [UserField resignFirstResponder];
