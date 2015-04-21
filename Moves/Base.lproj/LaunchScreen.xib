@@ -9,9 +9,17 @@
         <view contentMode="scaleToFill" id="rva-0Q-Swq">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="thevinyll.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fvZ-ij-Upe">
+                    <rect key="frame" x="0.0" y="236" width="375" height="232"/>
+                </imageView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="282" y="394"/>
+            <point key="canvasLocation" x="281.5" y="393.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="thevinyll.jpg" width="596" height="375"/>
+    </resources>
 </document>
