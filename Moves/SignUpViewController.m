@@ -61,6 +61,26 @@
     }
 }
 
+- (IBAction)FinishUsername:(id)sender {
+    [self textFieldShouldReturn:sender];
+}
+
+- (IBAction)FinishNewPassword:(id)sender {
+    [self textFieldShouldReturn:sender];
+}
+
+- (IBAction)FinishRePassword:(id)sender {
+    [self textFieldShouldReturn:sender];
+}
+
+- (IBAction)FinishEmail:(id)sender {
+    [self textFieldShouldReturn:sender];
+}
+
+- (IBAction)FinishReEmail:(id)sender {
+    [self textFieldShouldReturn:sender];
+}
+
 
 //HELPER FUNCTIONS
 - (void)SignUpProcess: (NSString*)username : (NSString*)password :(NSString*)email {
@@ -103,6 +123,25 @@
 -(void)deactivateIndicator {
     ActivityIndicator.hidden = YES;
     [ActivityIndicator stopAnimating];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == NewUserName) {
+        [textField resignFirstResponder];
+        [NewPassword becomeFirstResponder];
+    } else if (textField == NewPassword) {
+        [textField resignFirstResponder];
+        [ReEnterPassword becomeFirstResponder];
+    } else if (textField == ReEnterPassword) {
+        [textField resignFirstResponder];
+        [EmailAddress becomeFirstResponder];
+    } else if (textField == EmailAddress) {
+        [textField resignFirstResponder];
+        [ReEnterEmail becomeFirstResponder];
+    } else {
+        [self CreateAccount];
+    }
+    return YES;
 }
 
 @end

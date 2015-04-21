@@ -22,6 +22,11 @@
 }
 
 - (IBAction)CreateAccount;
+- (IBAction)FinishUsername:(id)sender;
+- (IBAction)FinishNewPassword:(id)sender;
+- (IBAction)FinishRePassword:(id)sender;
+- (IBAction)FinishEmail:(id)sender;
+- (IBAction)FinishReEmail:(id)sender;
 
 
 @end

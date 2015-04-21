@@ -34,7 +34,7 @@
 }
 
 
-- (IBAction)LoginButton:(id)sender {
+- (IBAction)LoginButton {
     [self activateIndicator];
     [PFUser logInWithUsernameInBackground:UserField.text password:PasswordField.text
         block:^(PFUser *user, NSError *error) {
@@ -70,6 +70,16 @@
     }
 }
 
+- (IBAction)FinishedUsername:(id)sender {
+    [self textFieldShouldReturn:UserField];
+}
+
+- (IBAction)FinishedPassword:(id)sender {
+    if (SignInButton.enabled) {
+        [self textFieldShouldReturn:PasswordField];
+    }
+}
+
 -(void)dismissKeyboard {
     [UserField resignFirstResponder];
     [PasswordField resignFirstResponder];
@@ -83,6 +93,16 @@
 -(void)deactivateIndicator {
     ActivityIndicator.hidden = YES;
     [ActivityIndicator stopAnimating];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == UserField) {
+        [textField resignFirstResponder];
+        [PasswordField becomeFirstResponder];
+    } else if (textField == PasswordField) {
+        [self LoginButton];
+    }
+    return YES;
 }
 
 

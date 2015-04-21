@@ -21,9 +21,11 @@
     NSDictionary *LoginDictionary;
 }
 
-- (IBAction)LoginButton:(id)sender;
+- (IBAction)LoginButton;
 - (IBAction)Username:(id)sender;
 - (IBAction)Password:(id)sender;
+- (IBAction)FinishedUsername:(id)sender;
+- (IBAction)FinishedPassword:(id)sender;
 
 
 
