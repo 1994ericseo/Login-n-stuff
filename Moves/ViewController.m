@@ -23,7 +23,6 @@
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
-    SignInButton.enabled = NO;
     ActivityIndicator.hidden = YES;
     
 }
@@ -34,38 +33,29 @@
 
 
 - (IBAction)LoginButton {
-    [self activateIndicator];
-    [PFUser logInWithUsernameInBackground:UserField.text password:PasswordField.text
-        block:^(PFUser *user, NSError *error) {
-        if (user) {
-            [self deactivateIndicator];
-             MainScreen *mainscreen = [self.storyboard instantiateViewControllerWithIdentifier:@"mainscreen"];
-            [self presentViewController:mainscreen animated:YES completion:nil];
-        } else {
-            [self deactivateIndicator];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sign in failed" message:@"Incorrect Username or Password" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-            [alert show];
-        }
-    }];
-}
-
-- (IBAction)Username:(id)sender {
-    if ((![UserField.text isEqualToString:@""]) &
-        (![PasswordField.text isEqualToString:@""])) {
-        SignInButton.enabled = YES;
+    if ([UserField.text isEqualToString:@""]) {
+        [UserField becomeFirstResponder];
+    }
+    else if ([PasswordField.text isEqualToString:@""]) {
+        [PasswordField becomeFirstResponder];
+    }
+    else if ([[SignInButton titleLabel].text isEqualToString:@"Sign In"]) {
+        [self activateIndicator];
+        [PFUser logInWithUsernameInBackground:UserField.text password:PasswordField.text
+                                        block:^(PFUser *user, NSError *error) {
+                                            if (user) {
+                                                [self deactivateIndicator];
+                                                MainScreen *mainscreen = [self.storyboard instantiateViewControllerWithIdentifier:@"mainscreen"];
+                                                [self presentViewController:mainscreen animated:YES completion:nil];
+                                            } else {
+                                                [self deactivateIndicator];
+                                                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sign in failed" message:@"Incorrect Username or Password" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+                                                [alert show];
+                                            }
+                                        }];
     }
     else {
-        SignInButton.enabled = NO;
-    }
-}
-
-- (IBAction)Password:(id)sender {
-    if ((![UserField.text isEqualToString:@""]) &
-        (![PasswordField.text isEqualToString:@""])) {
-        SignInButton.enabled = YES;
-    }
-    else {
-        SignInButton.enabled = NO;
+        [self SignUpProcess:UserField.text :PasswordField.text :UserField.text];
     }
 }
 
@@ -74,12 +64,57 @@
 }
 
 - (IBAction)FinishedPassword:(id)sender {
-    if (SignInButton.enabled) {
+    if (![UserField.text isEqualToString:@""] & (![PasswordField.text isEqualToString:@""])) {
         [self textFieldShouldReturn:PasswordField];
     }
+    else {
+        [UserField becomeFirstResponder];
+    }
+    
 }
 
-//HELPER FUNCTIONS
+- (IBAction)CreateOrSign:(id)sender {
+    if ([[sender titleLabel].text isEqualToString:@"Or, create an account"]) {
+        [self FadeOut:ForgotPassword];
+        [CreateSignButton setTitle:@"Or, sign in" forState:UIControlStateNormal];
+        [SignInButton setTitle:@"Create Account" forState:UIControlStateNormal];
+        UserField.placeholder = @"Email address";
+    }
+    else {
+        [self FadeIn:ForgotPassword];
+        [CreateSignButton setTitle:@"Or, create an account" forState:UIControlStateNormal];
+        [SignInButton setTitle:@"Sign In" forState:UIControlStateNormal];
+        UserField.placeholder = @"Email or username";
+    }
+    
+}
+
+#pragma mark HELPER FUNCTIONS
+
+
+-(void)SignUpProcess: (NSString*)username : (NSString*)password :(NSString*)email {
+    PFUser *user = [PFUser user];
+    user.username = username;
+    user.password = password;
+    user.email = email;
+    
+    // other fields can be set just like with PFObject
+    //user[@"phone"] = @"415-392-0202";
+    
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            // Hooray! Let them use the app now.
+            [self deactivateIndicator];
+            MainScreen *mainscreen = [self.storyboard instantiateViewControllerWithIdentifier:@"mainscreen"];
+            [self presentViewController:mainscreen animated:YES completion:nil];
+        } else {
+            [self deactivateIndicator];
+            NSString *errorString = [error userInfo][@"error"];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+            [alert show];
+        }
+    }];
+}
 
 -(void)dismissKeyboard {
     [UserField resignFirstResponder];
@@ -104,6 +139,21 @@
         [self LoginButton];
     }
     return YES;
+}
+
+- (void)FadeIn:(UIButton *)button {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5];
+    [button setAlpha:1.0];
+    [UIView commitAnimations];
+    
+}
+
+- (void)FadeOut:(UIButton *)button {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5];
+    [button setAlpha:0];
+    [UIView commitAnimations];
 }
 
 

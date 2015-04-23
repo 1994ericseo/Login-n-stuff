@@ -23,7 +23,6 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="FinishedPassword:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="An8-b0-z7T"/>
-                                    <action selector="Password:" destination="vXZ-lx-hvc" eventType="editingChanged" id="BnB-1X-lnm"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cj-Y7-d51">
@@ -35,23 +34,15 @@
                                     <action selector="LoginButton" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fh1-Hd-5Df"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IL4-cU-DE4">
-                                <rect key="frame" x="94" y="560" width="187" height="37"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Or, create an account">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="UCy-Dd-Xdi" kind="show" id="PFw-wB-ha7"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mhh-ah-aMm">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="oTE-C1-NIU">
+                                <rect key="frame" x="169" y="314" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email or username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mhh-ah-aMm">
                                 <rect key="frame" x="0.0" y="160" width="375" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
                                     <action selector="FinishedUsername:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="Fp4-qQ-lYO"/>
-                                    <action selector="Username:" destination="vXZ-lx-hvc" eventType="editingChanged" id="e3F-Bs-BAe"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdy-lG-7Vh">
@@ -61,15 +52,24 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="oTE-C1-NIU">
-                                <rect key="frame" x="169" y="314" width="37" height="37"/>
-                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IL4-cU-DE4">
+                                <rect key="frame" x="94" y="560" width="187" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Or, create an account">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="CreateOrSign:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Xza-le-R3u"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.5851759701" green="0.73222580010000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="ActivityIndicator" destination="oTE-C1-NIU" id="r20-9S-1YJ"/>
+                        <outlet property="CreateSignButton" destination="IL4-cU-DE4" id="RGF-Sb-qwM"/>
+                        <outlet property="ForgotPassword" destination="vdy-lG-7Vh" id="ZCY-Ye-b80"/>
                         <outlet property="PasswordField" destination="spa-Wf-FqN" id="SOP-Wj-GzO"/>
                         <outlet property="SignInButton" destination="1cj-Y7-d51" id="vFe-zG-nnc"/>
                         <outlet property="UserField" destination="mhh-ah-aMm" id="2g3-su-GWI"/>
@@ -78,16 +78,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.5" y="415.5"/>
-        </scene>
-        <!--Page View Controller-->
-        <scene sceneID="IjM-6O-z5V">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="e7J-5q-wLL" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="He6-h0-t1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1184" y="783"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="XPA-ZS-m89">

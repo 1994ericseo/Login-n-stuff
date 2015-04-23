@@ -17,17 +17,18 @@
     IBOutlet UITextField *PasswordField;
     IBOutlet UIButton *SignInButton;
     IBOutlet UIActivityIndicatorView *ActivityIndicator;
+    IBOutlet UIButton *ForgotPassword;
+    IBOutlet UIButton *CreateSignButton;
     
     NSDictionary *LoginDictionary;
 }
 
 - (IBAction)LoginButton;
-- (IBAction)Username:(id)sender;
-- (IBAction)Password:(id)sender;
 - (IBAction)FinishedUsername:(id)sender;
 - (IBAction)FinishedPassword:(id)sender;
 
 
+- (IBAction)CreateOrSign:(id)sender;
 
 
 @end
