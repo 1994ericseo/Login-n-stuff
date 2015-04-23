@@ -96,8 +96,8 @@
         if (!error) {
             // Hooray! Let them use the app now.
             [self deactivateIndicator];
-            SuccessViewController *success = [self.storyboard instantiateViewControllerWithIdentifier:@"Success"];
-            [self presentViewController:success animated:YES completion:nil];
+            MainScreen *mainscreen = [self.storyboard instantiateViewControllerWithIdentifier:@"mainscreen"];
+            [self presentViewController:mainscreen animated:YES completion:nil];
         } else {
             [self deactivateIndicator];
             NSString *errorString = [error userInfo][@"error"];

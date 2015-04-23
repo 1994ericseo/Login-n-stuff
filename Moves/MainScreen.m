@@ -1,18 +1,18 @@
 //
-//  SuccessViewController.m
+//  MainScreen.m
 //  Moves
 //
-//  Created by Eric Seo on 4/20/15.
+//  Created by Eric Seo on 4/22/15.
 //  Copyright (c) 2015 SeoEricc. All rights reserved.
 //
 
-#import "SuccessViewController.h"
+#import "MainScreen.h"
 
-@interface SuccessViewController ()
+@interface MainScreen ()
 
 @end
 
-@implementation SuccessViewController
+@implementation MainScreen
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -16,7 +16,6 @@
 		AD2BE22D1AE3091F00EECFE0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD2BE22B1AE3091F00EECFE0 /* LaunchScreen.xib */; };
 		AD2BE2391AE3091F00EECFE0 /* MovesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2BE2381AE3091F00EECFE0 /* MovesTests.m */; };
 		AD2E68291AE5BCAB00957186 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2E68281AE5BCAB00957186 /* SignUpViewController.m */; };
-		AD2E682C1AE5C24000957186 /* SuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2E682B1AE5C24000957186 /* SuccessViewController.m */; };
 		AD3815941AE5ABD0009C6461 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3815921AE5ABD0009C6461 /* Bolts.framework */; };
 		AD3815951AE5ABD0009C6461 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3815931AE5ABD0009C6461 /* Parse.framework */; };
 		AD3815A21AE5AC92009C6461 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3815971AE5AC92009C6461 /* AudioToolbox.framework */; };
@@ -32,6 +31,7 @@
 		AD3815AC1AE5AC92009C6461 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3815A11AE5AC92009C6461 /* SystemConfiguration.framework */; };
 		AD3815AF1AE5ACA7009C6461 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3815AD1AE5ACA7009C6461 /* Accounts.framework */; };
 		AD3815B01AE5ACA7009C6461 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3815AE1AE5ACA7009C6461 /* Social.framework */; };
+		AD436FB91AE8AB84001387D1 /* MainScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = AD436FB81AE8AB84001387D1 /* MainScreen.m */; };
 		ADE3A4351AE64C840055E7C3 /* thevinyll.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADE3A4341AE64C840055E7C3 /* thevinyll.jpg */; };
 /* End PBXBuildFile section */
 
@@ -62,8 +62,6 @@
 		AD2BE2381AE3091F00EECFE0 /* MovesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovesTests.m; sourceTree = "<group>"; };
 		AD2E68271AE5BCAB00957186 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		AD2E68281AE5BCAB00957186 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
-		AD2E682A1AE5C24000957186 /* SuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccessViewController.h; sourceTree = "<group>"; };
-		AD2E682B1AE5C24000957186 /* SuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccessViewController.m; sourceTree = "<group>"; };
 		AD3815921AE5ABD0009C6461 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../Documents/FrameWorks/parse-library-1.7.1/Bolts.framework"; sourceTree = "<group>"; };
 		AD3815931AE5ABD0009C6461 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../Documents/FrameWorks/parse-library-1.7.1/Parse.framework"; sourceTree = "<group>"; };
 		AD3815971AE5AC92009C6461 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -79,6 +77,8 @@
 		AD3815A11AE5AC92009C6461 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AD3815AD1AE5ACA7009C6461 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		AD3815AE1AE5ACA7009C6461 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		AD436FB71AE8AB84001387D1 /* MainScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreen.h; sourceTree = "<group>"; };
+		AD436FB81AE8AB84001387D1 /* MainScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreen.m; sourceTree = "<group>"; };
 		ADE3A4341AE64C840055E7C3 /* thevinyll.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thevinyll.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,8 +144,8 @@
 				AD2BE2241AE3091F00EECFE0 /* ViewController.m */,
 				AD2E68271AE5BCAB00957186 /* SignUpViewController.h */,
 				AD2E68281AE5BCAB00957186 /* SignUpViewController.m */,
-				AD2E682A1AE5C24000957186 /* SuccessViewController.h */,
-				AD2E682B1AE5C24000957186 /* SuccessViewController.m */,
+				AD436FB71AE8AB84001387D1 /* MainScreen.h */,
+				AD436FB81AE8AB84001387D1 /* MainScreen.m */,
 				AD2BE2261AE3091F00EECFE0 /* Main.storyboard */,
 				AD2BE2291AE3091F00EECFE0 /* Images.xcassets */,
 				AD2BE22B1AE3091F00EECFE0 /* LaunchScreen.xib */,
@@ -314,9 +314,9 @@
 			files = (
 				AD2BE2221AE3091F00EECFE0 /* Moves.xcdatamodeld in Sources */,
 				AD2E68291AE5BCAB00957186 /* SignUpViewController.m in Sources */,
+				AD436FB91AE8AB84001387D1 /* MainScreen.m in Sources */,
 				AD2BE21F1AE3091F00EECFE0 /* AppDelegate.m in Sources */,
 				AD2BE2251AE3091F00EECFE0 /* ViewController.m in Sources */,
-				AD2E682C1AE5C24000957186 /* SuccessViewController.m in Sources */,
 				AD2BE21C1AE3091F00EECFE0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

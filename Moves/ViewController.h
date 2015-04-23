@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-#import "SuccessViewController.h"
+#import "MainScreen.h"
 
 
 @interface ViewController : UIViewController

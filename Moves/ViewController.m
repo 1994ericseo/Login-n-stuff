@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //Set textfied sizes
+    
     //For dismissing keyboard
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
@@ -37,8 +39,8 @@
         block:^(PFUser *user, NSError *error) {
         if (user) {
             [self deactivateIndicator];
-            SuccessViewController *success = [self.storyboard instantiateViewControllerWithIdentifier:@"Success"];
-                        [self presentViewController:success animated:YES completion:nil];
+             MainScreen *mainscreen = [self.storyboard instantiateViewControllerWithIdentifier:@"mainscreen"];
+            [self presentViewController:mainscreen animated:YES completion:nil];
         } else {
             [self deactivateIndicator];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sign in failed" message:@"Incorrect Username or Password" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
