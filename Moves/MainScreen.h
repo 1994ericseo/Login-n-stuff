@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface MainScreen : UIViewController
+@interface MainScreen : UIViewController {
+    
+}
+
+- (IBAction)CreateNewLog;
+- (IBAction)LogOut;
+
 
 @end

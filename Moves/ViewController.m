@@ -89,6 +89,7 @@
     
 }
 
+
 #pragma mark HELPER FUNCTIONS
 
 
@@ -155,6 +156,7 @@
     [button setAlpha:0];
     [UIView commitAnimations];
 }
+
 
 
 @end
