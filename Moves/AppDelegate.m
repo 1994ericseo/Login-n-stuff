@@ -28,7 +28,7 @@
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    
+    sleep(2);
     
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -45,7 +45,6 @@
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
     
-    sleep(1);
     
     
     
