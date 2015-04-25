@@ -29,23 +29,26 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     
-    /*self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    NSString *viewz = @"ViewController";
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *loggedon = [defaults objectForKey:@"loggedon"];
-    if ([loggedon isEqualToString:@"Yes"]) {
-        viewz = @"MainScreen";
+    
+    NSString *logz = @"login";
+    BOOL isRunning = [[NSUserDefaults standardUserDefaults] boolForKey:@"is_loggedon"];
+    if (isRunning) {
+        logz = @"mainscreen";
     }
     
-    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:viewz];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:logz];
     
     self.window.rootViewController = viewController;
-    [self.window makeKeyAndVisible]; */
+    [self.window makeKeyAndVisible];
     
     sleep(1);
+    
+    
+    
     
     return YES;
 }

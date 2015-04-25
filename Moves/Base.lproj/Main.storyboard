@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WXz-A6-Zah">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
@@ -40,6 +40,7 @@
                                 </state>
                                 <connections>
                                     <action selector="LogOut" destination="IKV-wG-PQe" eventType="touchUpInside" id="RTo-NF-dob"/>
+                                    <segue destination="WXz-A6-Zah" kind="presentation" modalTransitionStyle="flipHorizontal" id="j2K-Qh-1VS"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U4v-dx-vOJ">
@@ -67,7 +68,7 @@
         <!--Photo Video Note-->
         <scene sceneID="LUe-g5-Mol">
             <objects>
-                <viewController id="ZOr-cD-3qx" customClass="PhotoVideoNote" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="photo" id="ZOr-cD-3qx" customClass="PhotoVideoNote" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SCD-0Q-LLI"/>
                         <viewControllerLayoutGuide type="bottom" id="ih8-6t-pBq"/>
@@ -145,7 +146,7 @@
         <!--View Controller-->
         <scene sceneID="tD0-GA-w7t">
             <objects>
-                <viewController id="WXz-A6-Zah" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="WXz-A6-Zah" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nZF-ds-Smk"/>
                         <viewControllerLayoutGuide type="bottom" id="Q6x-aM-Izm"/>

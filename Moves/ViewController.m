@@ -44,10 +44,7 @@
         [PFUser logInWithUsernameInBackground:UserField.text password:PasswordField.text
                                         block:^(PFUser *user, NSError *error) {
                                             if (user) {
-                                                NSString *loggedon = @"Yes";
-                                                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-                                                [defaults setObject:loggedon forKey:@"loggedon"];
-                                                [defaults synchronize];
+                                                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"is_loggedon"];
                                                 
                                                 [self deactivateIndicator];
                                                 MainScreen *mainscreen = [self.storyboard instantiateViewControllerWithIdentifier:@"mainscreen"];

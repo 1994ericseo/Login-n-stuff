@@ -31,11 +31,9 @@
 }
 
 - (IBAction)LogOut {
-    [self dismissViewControllerAnimated:YES completion:NULL];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *loggedon = @"No";
-    [defaults setObject:loggedon forKey:@"loggedon"];
-    [defaults synchronize];
+    //[self dismissViewControllerAnimated:YES completion:NULL];
+    
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"is_loggedon"];
     
     [PFUser logOut];
 }
