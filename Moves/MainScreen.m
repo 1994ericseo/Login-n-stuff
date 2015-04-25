@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self LoadTitle];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,6 +32,27 @@
 
 - (IBAction)LogOut {
     [self dismissViewControllerAnimated:YES completion:NULL];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *loggedon = @"No";
+    [defaults setObject:loggedon forKey:@"loggedon"];
+    [defaults synchronize];
+    
     [PFUser logOut];
+}
+
+- (IBAction)Title:(id)sender {
+    NSString *savestring = TitleLabel.text;
+    [self resignFirstResponder];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:savestring forKey:@"savedstring"];
+    [defaults synchronize];
+    
+}
+
+- (void)LoadTitle {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *loadstring = [defaults objectForKey:@"savedstring"];
+    [TitleLabel setText:loadstring];
 }
 @end

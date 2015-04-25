@@ -11,10 +11,12 @@
 
 @interface MainScreen : UIViewController {
     
+    IBOutlet UITextField *TitleLabel;
 }
 
 - (IBAction)CreateNewLog;
 - (IBAction)LogOut;
+- (IBAction)Title:(id)sender;
 
 
 @end

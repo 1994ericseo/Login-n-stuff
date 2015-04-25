@@ -31,7 +31,7 @@
 		AD3815AF1AE5ACA7009C6461 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3815AD1AE5ACA7009C6461 /* Accounts.framework */; };
 		AD3815B01AE5ACA7009C6461 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3815AE1AE5ACA7009C6461 /* Social.framework */; };
 		AD436FB91AE8AB84001387D1 /* MainScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = AD436FB81AE8AB84001387D1 /* MainScreen.m */; };
-		AD436FBC1AE9C4AB001387D1 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD436FBB1AE9C4AB001387D1 /* CameraViewController.m */; };
+		ADC02CF01AEADFCD00AFCD11 /* PhotoVideoNote.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC02CEF1AEADFCD00AFCD11 /* PhotoVideoNote.m */; };
 		ADE3A4351AE64C840055E7C3 /* thevinyll.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADE3A4341AE64C840055E7C3 /* thevinyll.jpg */; };
 /* End PBXBuildFile section */
 
@@ -77,8 +77,8 @@
 		AD3815AE1AE5ACA7009C6461 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		AD436FB71AE8AB84001387D1 /* MainScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreen.h; sourceTree = "<group>"; };
 		AD436FB81AE8AB84001387D1 /* MainScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreen.m; sourceTree = "<group>"; };
-		AD436FBA1AE9C4AB001387D1 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
-		AD436FBB1AE9C4AB001387D1 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		ADC02CEE1AEADFCD00AFCD11 /* PhotoVideoNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoVideoNote.h; sourceTree = "<group>"; };
+		ADC02CEF1AEADFCD00AFCD11 /* PhotoVideoNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoVideoNote.m; sourceTree = "<group>"; };
 		ADE3A4341AE64C840055E7C3 /* thevinyll.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thevinyll.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,8 +144,8 @@
 				AD2BE2241AE3091F00EECFE0 /* ViewController.m */,
 				AD436FB71AE8AB84001387D1 /* MainScreen.h */,
 				AD436FB81AE8AB84001387D1 /* MainScreen.m */,
-				AD436FBA1AE9C4AB001387D1 /* CameraViewController.h */,
-				AD436FBB1AE9C4AB001387D1 /* CameraViewController.m */,
+				ADC02CEE1AEADFCD00AFCD11 /* PhotoVideoNote.h */,
+				ADC02CEF1AEADFCD00AFCD11 /* PhotoVideoNote.m */,
 				AD2BE2261AE3091F00EECFE0 /* Main.storyboard */,
 				AD2BE2291AE3091F00EECFE0 /* Images.xcassets */,
 				AD2BE22B1AE3091F00EECFE0 /* LaunchScreen.xib */,
@@ -315,8 +315,8 @@
 				AD2BE2221AE3091F00EECFE0 /* Moves.xcdatamodeld in Sources */,
 				AD436FB91AE8AB84001387D1 /* MainScreen.m in Sources */,
 				AD2BE21F1AE3091F00EECFE0 /* AppDelegate.m in Sources */,
-				AD436FBC1AE9C4AB001387D1 /* CameraViewController.m in Sources */,
 				AD2BE2251AE3091F00EECFE0 /* ViewController.m in Sources */,
+				ADC02CF01AEADFCD00AFCD11 /* PhotoVideoNote.m in Sources */,
 				AD2BE21C1AE3091F00EECFE0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
