@@ -37,7 +37,7 @@
     NSString *logz = @"login";
     BOOL isRunning = [[NSUserDefaults standardUserDefaults] boolForKey:@"is_loggedon"];
     if (isRunning) {
-        logz = @"mainscreen";
+        logz = @"sw";
     }
     
     UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:logz];

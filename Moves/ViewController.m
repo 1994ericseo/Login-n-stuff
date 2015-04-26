@@ -47,7 +47,7 @@
                                                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"is_loggedon"];
                                                 
                                                 [self deactivateIndicator];
-                                                MainScreen *mainscreen = [self.storyboard instantiateViewControllerWithIdentifier:@"mainscreen"];
+                                                MainScreen *mainscreen = [self.storyboard instantiateViewControllerWithIdentifier:@"sw"];
                                                 [self presentViewController:mainscreen animated:YES completion:nil];
                                             } else {
                                                 [self deactivateIndicator];

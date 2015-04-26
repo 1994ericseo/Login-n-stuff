@@ -4,66 +4,145 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
-        <!--Main Screen-->
-        <scene sceneID="0nR-R8-f03">
+        <!--Reveal View Controller-->
+        <scene sceneID="sxd-jp-vl7">
             <objects>
-                <viewController storyboardIdentifier="mainscreen" id="IKV-wG-PQe" customClass="MainScreen" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sw" id="YE5-OO-yWs" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xCb-4c-87y"/>
-                        <viewControllerLayoutGuide type="bottom" id="lDh-bo-ZWX"/>
+                        <viewControllerLayoutGuide type="top" id="oeO-PG-5lV"/>
+                        <viewControllerLayoutGuide type="bottom" id="dWL-9S-3yz"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vd0-7o-KW2">
+                    <view key="view" contentMode="scaleToFill" id="uqb-sP-5Yp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k1L-vq-XWc">
-                                <rect key="frame" x="0.0" y="49" width="375" height="618"/>
-                            </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eos-yP-wzc">
-                                <rect key="frame" x="311" y="0.0" width="64" height="51"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="+">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ZOr-cD-3qx" kind="presentation" id="89o-t4-LHq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRE-dv-ZrK">
-                                <rect key="frame" x="0.0" y="0.0" width="58" height="51"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="Logout">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="LogOut" destination="IKV-wG-PQe" eventType="touchUpInside" id="RTo-NF-dob"/>
-                                    <segue destination="WXz-A6-Zah" kind="presentation" modalTransitionStyle="flipHorizontal" id="j2K-Qh-1VS"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U4v-dx-vOJ">
-                                <rect key="frame" x="58" y="3" width="253" height="48"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                <connections>
-                                    <action selector="Title:" destination="IKV-wG-PQe" eventType="editingDidEndOnExit" id="z6l-1j-p6E"/>
-                                </connections>
-                            </textField>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <nil key="simulatedStatusBarMetrics"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="TitleLabel" destination="U4v-dx-vOJ" id="pY0-CW-8sE"/>
+                        <segue destination="nOe-j5-kAa" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegue" id="s1L-Ql-0y7"/>
+                        <segue destination="twh-Gy-Kxd" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegue" id="lTh-Yr-GXE"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rm0-wJ-6fu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0qg-en-Mg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45.5" y="-349.5"/>
+            <point key="canvasLocation" x="-367.5" y="429.5"/>
+        </scene>
+        <!--Navigation View Controller-->
+        <scene sceneID="24F-zS-DEy">
+            <objects>
+                <tableViewController id="nOe-j5-kAa" customClass="NavigationViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jLg-34-rZQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.59625552400000004" green="0.042703498389999997" blue="0.056963192009999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="VQq-Ox-Fac">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem title="Logout" id="Wbx-WY-uU9">
+                                    <connections>
+                                        <action selector="Logout:" destination="nOe-j5-kAa" id="E8a-I1-hwf"/>
+                                        <segue destination="WXz-A6-Zah" kind="presentation" modalTransitionStyle="flipHorizontal" id="See-x0-4da"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="first" textLabel="xon-LV-L0b" style="IBUITableViewCellStyleDefault" id="Vg8-3v-LWl">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vg8-3v-LWl" id="H06-zk-GIh">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Powermoves" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xon-LV-L0b">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.59625552398989901" green="0.04270349838979582" blue="0.056963192013934023" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="Ruc-yy-SRv" kind="custom" customClass="SWRevealViewControllerSegue" id="uBk-KH-Bup"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nOe-j5-kAa" id="WFF-3n-bsR"/>
+                            <outlet property="delegate" destination="nOe-j5-kAa" id="XJD-1e-ict"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="Table" destination="jLg-34-rZQ" id="HMA-kw-1SD"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iHe-l2-WqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="171.5" y="423.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5Ku-5Q-nwL">
+            <objects>
+                <navigationController id="twh-Gy-Kxd" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qyj-Qg-gl6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ruc-yy-SRv" kind="relationship" relationship="rootViewController" id="U0A-tn-FXf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AKT-lj-T3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="443.5" y="1211.5"/>
+        </scene>
+        <!--SlideN Stuff-->
+        <scene sceneID="31m-Gr-THB">
+            <objects>
+                <viewController storyboardIdentifier="Slide" id="Ruc-yy-SRv" customClass="SlideNStuff" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V2N-R1-Vai"/>
+                        <viewControllerLayoutGuide type="bottom" id="YeX-0U-UHB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tAl-gW-d59">
+                        <rect key="frame" x="0.0" y="44" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fUV-3B-vLn">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="QCb-XP-hQb"/>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Title" textAlignment="center" minimumFontSize="17" id="vMM-8G-A9O">
+                            <rect key="frame" x="76" y="7" width="224" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="Title:" destination="Ruc-yy-SRv" eventType="editingDidEndOnExit" id="kkX-aY-0ao"/>
+                            </connections>
+                        </textField>
+                        <barButtonItem key="rightBarButtonItem" title="+" id="tJ1-xh-vBr">
+                            <connections>
+                                <segue destination="ZOr-cD-3qx" kind="presentation" id="dv1-BM-KxK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="TitleLabel" destination="vMM-8G-A9O" id="qxL-zJ-ePq"/>
+                        <outlet property="barButton" destination="QCb-XP-hQb" id="3vR-F4-tzl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zw1-Ve-dHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="963.5" y="1191.5"/>
         </scene>
         <!--Photo Video Note-->
         <scene sceneID="LUe-g5-Mol">
@@ -115,15 +194,6 @@
                                     <action selector="TakeFromLibrary:" destination="ZOr-cD-3qx" eventType="touchUpInside" id="xIM-H2-Bos"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfA-Cv-kam">
-                                <rect key="frame" x="16" y="629" width="46" height="30"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="BackButton" destination="ZOr-cD-3qx" eventType="touchUpInside" id="9Eh-tC-gzY"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajt-6H-ZSX">
                                 <rect key="frame" x="260" y="49" width="110" height="122"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -157,23 +227,24 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHu-mw-9Ni">
                                 <rect key="frame" x="0.0" y="239" width="375" height="44"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.73136385559999995" blue="0.6821852115" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ks1-3v-TU9">
                                 <rect key="frame" x="0.0" y="193" width="375" height="44"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.73136385559999995" blue="0.6821852115" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yl-9D-sXV">
                                 <rect key="frame" x="113" y="297" width="149" height="35"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.59625552400000004" green="0.042703498389999997" blue="0.056963192009999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Sign In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -194,7 +265,7 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4oF-Lf-oa3">
                                 <rect key="frame" x="16" y="239" width="343" height="44"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.73136385559999995" blue="0.6821852115" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
@@ -207,7 +278,7 @@
                             </activityIndicatorView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email or username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zqZ-1j-7j9">
                                 <rect key="frame" x="16" y="193" width="343" height="44"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.73136385561571415" blue="0.6821852115020075" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
@@ -218,7 +289,7 @@
                                 <rect key="frame" x="94" y="377" width="187" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Or, create an account">
-                                    <color key="titleColor" red="1" green="0.25802263920000001" blue="0.2912924878" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.59625552400000004" green="0.042703498389999997" blue="0.056963192009999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -226,7 +297,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.5851759701" green="0.73222580010000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -247,4 +318,7 @@
     <resources>
         <image name="thevinyll.jpg" width="596" height="375"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="uBk-KH-Bup"/>
+    </inferredMetricsTieBreakers>
 </document>
