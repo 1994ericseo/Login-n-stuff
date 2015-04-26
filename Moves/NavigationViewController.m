@@ -73,10 +73,5 @@
     
 }
 
-- (IBAction)Logout:(id)sender {
-    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"is_loggedon"];
-    
-    [PFUser logOut];
-    
-}
+
 @end

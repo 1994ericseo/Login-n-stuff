@@ -43,8 +43,7 @@
                             <items>
                                 <barButtonItem title="Logout" id="Wbx-WY-uU9">
                                     <connections>
-                                        <action selector="Logout:" destination="nOe-j5-kAa" id="E8a-I1-hwf"/>
-                                        <segue destination="WXz-A6-Zah" kind="presentation" modalTransitionStyle="flipHorizontal" id="See-x0-4da"/>
+                                        <segue destination="WXz-A6-Zah" kind="presentation" id="Poo-6s-oSD"/>
                                     </connections>
                                 </barButtonItem>
                             </items>
@@ -114,12 +113,54 @@
                         <rect key="frame" x="0.0" y="44" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="28j-DB-Wil">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="28j-DB-Wil">
                                 <rect key="frame" x="49" y="119" width="276" height="366"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0X0-J7-WBG">
+                                        <rect key="frame" x="152" y="14" width="110" height="122"/>
+                                        <color key="backgroundColor" red="0.59625552400000004" green="0.042703498389999997" blue="0.056963192009999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Video">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="GotoVideo" destination="Ruc-yy-SRv" eventType="touchUpInside" id="zSu-KK-iFb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0g-Pe-vb7">
+                                        <rect key="frame" x="8" y="184" width="110" height="122"/>
+                                        <color key="backgroundColor" red="0.59625552400000004" green="0.042703498389999997" blue="0.056963192009999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Note">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30p-9y-6c3">
+                                        <rect key="frame" x="152" y="184" width="110" height="122"/>
+                                        <color key="backgroundColor" red="0.59625552400000004" green="0.042703498389999997" blue="0.056963192009999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Library">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="TakeFromLibrary:" destination="Ruc-yy-SRv" eventType="touchUpInside" id="rtU-2H-fTt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwI-7I-4Ie">
+                                        <rect key="frame" x="8" y="14" width="110" height="122"/>
+                                        <color key="backgroundColor" red="0.59625552400000004" green="0.042703498389999997" blue="0.056963192009999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Photo">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="GotoPhoto" destination="Ruc-yy-SRv" eventType="touchUpInside" id="ew6-e1-mW4"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBJ-8G-s1i">
-                                        <rect key="frame" x="115" y="314" width="57" height="30"/>
+                                        <rect key="frame" x="110" y="314" width="57" height="30"/>
                                         <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="0.59625552400000004" green="0.042703498389999997" blue="0.056963192009999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -127,7 +168,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.90592532000000003" blue="0.27762402139999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -171,84 +212,6 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="963.5" y="1191.5"/>
-        </scene>
-        <!--Photo Video Note-->
-        <scene sceneID="LUe-g5-Mol">
-            <objects>
-                <viewController storyboardIdentifier="photo" id="ZOr-cD-3qx" customClass="PhotoVideoNote" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SCD-0Q-LLI"/>
-                        <viewControllerLayoutGuide type="bottom" id="ih8-6t-pBq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sBs-2r-NLv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6t-UZ-iNg">
-                                <rect key="frame" x="132" y="49" width="110" height="122"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Video">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="GotoVideo" destination="ZOr-cD-3qx" eventType="touchUpInside" id="7AI-Jz-ZuF"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add a..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjy-oD-fPN">
-                                <rect key="frame" x="16" y="20" width="86" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEg-UF-lc1">
-                                <rect key="frame" x="4" y="49" width="110" height="122"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Photo">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="GotoPhoto" destination="ZOr-cD-3qx" eventType="touchUpInside" id="nxO-z1-OtB"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e6q-zF-pG9">
-                                <rect key="frame" x="27" y="230" width="320" height="355"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jj6-kB-OZ5">
-                                <rect key="frame" x="143" y="192" width="89" height="30"/>
-                                <state key="normal" title="From Library">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="TakeFromLibrary:" destination="ZOr-cD-3qx" eventType="touchUpInside" id="xIM-H2-Bos"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajt-6H-ZSX">
-                                <rect key="frame" x="260" y="49" width="110" height="122"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Note">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6Q-Hf-QLm">
-                                <rect key="frame" x="16" y="617" width="46" height="30"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="BackButton" destination="ZOr-cD-3qx" eventType="touchUpInside" id="Uwu-UU-pgG"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="ImageView" destination="e6q-zF-pG9" id="OlM-r8-Et9"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GJ2-rB-QdK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="443.5" y="-349.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tD0-GA-w7t">

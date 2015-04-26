@@ -17,7 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //Set textfied sizes
+    
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"is_loggedon"];
+    [PFUser logOut];
     
     //For dismissing keyboard
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
@@ -58,6 +60,7 @@
                                         }];
     }
     else {
+        [self activateIndicator];
         [self SignUpProcess:UserField.text :PasswordField.text :UserField.text];
     }
 }
@@ -108,8 +111,10 @@
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
             // Hooray! Let them use the app now.
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"is_loggedon"];
+            
             [self deactivateIndicator];
-            SWRevealViewController *mainscreen = [self.storyboard instantiateViewControllerWithIdentifier:@"mainscreen"];
+            SWRevealViewController *mainscreen = [self.storyboard instantiateViewControllerWithIdentifier:@"sw"];
             [self presentViewController:mainscreen animated:YES completion:nil];
         } else {
             [self deactivateIndicator];

@@ -13,6 +13,6 @@
     
     IBOutlet UITableView *Table;
 }
-- (IBAction)Logout:(id)sender;
+
 
 @end
