@@ -11,10 +11,16 @@
 @interface SlideNStuff : UIViewController
 {
     
+    IBOutlet UINavigationItem *Navigation;
     IBOutlet UITextField *TitleLabel;
+    IBOutlet UIView *AddView;
 }
 
 - (IBAction)Title:(id)sender;
+- (IBAction)AddStuff:(id)sender;
+- (IBAction)Cancel:(id)sender;
+
+
 
 
 

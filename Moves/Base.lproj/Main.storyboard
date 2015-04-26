@@ -113,6 +113,23 @@
                     <view key="view" contentMode="scaleToFill" id="tAl-gW-d59">
                         <rect key="frame" x="0.0" y="44" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="28j-DB-Wil">
+                                <rect key="frame" x="49" y="119" width="276" height="366"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBJ-8G-s1i">
+                                        <rect key="frame" x="115" y="314" width="57" height="30"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="Cancel:" destination="Ruc-yy-SRv" eventType="touchUpInside" id="MKr-YO-oc3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="fUV-3B-vLn">
@@ -127,15 +144,17 @@
                                 <action selector="Title:" destination="Ruc-yy-SRv" eventType="editingDidEndOnExit" id="kkX-aY-0ao"/>
                             </connections>
                         </textField>
-                        <barButtonItem key="rightBarButtonItem" title="+" id="tJ1-xh-vBr">
+                        <barButtonItem key="rightBarButtonItem" title="  +  " id="tJ1-xh-vBr">
                             <connections>
-                                <segue destination="ZOr-cD-3qx" kind="presentation" id="dv1-BM-KxK"/>
+                                <action selector="AddStuff:" destination="Ruc-yy-SRv" id="131-3A-e0l"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="AddView" destination="28j-DB-Wil" id="P9u-oK-rZF"/>
+                        <outlet property="Navigation" destination="fUV-3B-vLn" id="gbJ-R5-AQP"/>
                         <outlet property="TitleLabel" destination="vMM-8G-A9O" id="qxL-zJ-ePq"/>
                         <outlet property="barButton" destination="QCb-XP-hQb" id="3vR-F4-tzl"/>
                         <outlet property="searchDisplayController" destination="pYK-I5-Hcr" id="OmZ-Er-bWt"/>
@@ -209,6 +228,15 @@
                                 <state key="normal" title="Note">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6Q-Hf-QLm">
+                                <rect key="frame" x="16" y="617" width="46" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="BackButton" destination="ZOr-cD-3qx" eventType="touchUpInside" id="Uwu-UU-pgG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

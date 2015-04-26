@@ -23,6 +23,12 @@
     _barButton.action = @selector(revealToggle:);
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    //dismiss keyboard
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    AddView.alpha = 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,9 +55,45 @@
     [defaults synchronize];
 }
 
+- (IBAction)AddStuff:(id)sender {
+    AddView.hidden = NO;
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    [AddView setAlpha:1.0];
+    [self.view setAlpha:0.8f];
+    [UIView commitAnimations];
+    
+    
+    //make all buttons Disabled plz
+    Navigation.leftBarButtonItem.enabled = NO;
+    Navigation.rightBarButtonItem.enabled = NO;
+    TitleLabel.userInteractionEnabled = NO;
+    TitleLabel.alpha = 0.2f;
+}
+
+- (IBAction)Cancel:(id)sender {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    [AddView setAlpha:0];
+    [self.view setAlpha:1];
+    [AddView setHidden:YES];
+    [UIView commitAnimations];
+    
+    self.view.userInteractionEnabled = YES;
+    Navigation.leftBarButtonItem.enabled = YES;
+    Navigation.rightBarButtonItem.enabled = YES;
+    TitleLabel.userInteractionEnabled = YES;
+    TitleLabel.alpha = 1;
+    
+}
+
 - (void)LoadTitle {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *loadstring = [defaults objectForKey:@"savedstring"];
     [TitleLabel setText:loadstring];
+}
+
+-(void)dismissKeyboard {
+    [TitleLabel resignFirstResponder];
 }
 @end
