@@ -138,9 +138,18 @@
                     <connections>
                         <outlet property="TitleLabel" destination="vMM-8G-A9O" id="qxL-zJ-ePq"/>
                         <outlet property="barButton" destination="QCb-XP-hQb" id="3vR-F4-tzl"/>
+                        <outlet property="searchDisplayController" destination="pYK-I5-Hcr" id="OmZ-Er-bWt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zw1-Ve-dHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="pYK-I5-Hcr">
+                    <connections>
+                        <outlet property="delegate" destination="Ruc-yy-SRv" id="XIl-6O-uRQ"/>
+                        <outlet property="searchContentsController" destination="Ruc-yy-SRv" id="afx-mI-1LQ"/>
+                        <outlet property="searchResultsDataSource" destination="Ruc-yy-SRv" id="rSr-9H-0Gi"/>
+                        <outlet property="searchResultsDelegate" destination="Ruc-yy-SRv" id="237-go-Gq2"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="963.5" y="1191.5"/>
         </scene>
@@ -275,6 +284,7 @@
                             </textField>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="YCN-mF-uYu">
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="1" green="0.0" blue="0.070236308712233964" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email or username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zqZ-1j-7j9">
                                 <rect key="frame" x="16" y="193" width="343" height="44"/>

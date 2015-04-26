@@ -30,7 +30,6 @@
 		AD3815AC1AE5AC92009C6461 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3815A11AE5AC92009C6461 /* SystemConfiguration.framework */; };
 		AD3815AF1AE5ACA7009C6461 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3815AD1AE5ACA7009C6461 /* Accounts.framework */; };
 		AD3815B01AE5ACA7009C6461 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3815AE1AE5ACA7009C6461 /* Social.framework */; };
-		AD436FB91AE8AB84001387D1 /* MainScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = AD436FB81AE8AB84001387D1 /* MainScreen.m */; };
 		ADC02CF01AEADFCD00AFCD11 /* PhotoVideoNote.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC02CEF1AEADFCD00AFCD11 /* PhotoVideoNote.m */; };
 		ADC02D2C1AEC5E8100AFCD11 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC02D2B1AEC5E8100AFCD11 /* SWRevealViewController.m */; };
 		ADC02D2F1AEC5F0800AFCD11 /* SlideNStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC02D2E1AEC5F0800AFCD11 /* SlideNStuff.m */; };
@@ -78,8 +77,6 @@
 		AD3815A11AE5AC92009C6461 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AD3815AD1AE5ACA7009C6461 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		AD3815AE1AE5ACA7009C6461 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		AD436FB71AE8AB84001387D1 /* MainScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreen.h; sourceTree = "<group>"; };
-		AD436FB81AE8AB84001387D1 /* MainScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreen.m; sourceTree = "<group>"; };
 		ADC02CEE1AEADFCD00AFCD11 /* PhotoVideoNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoVideoNote.h; sourceTree = "<group>"; };
 		ADC02CEF1AEADFCD00AFCD11 /* PhotoVideoNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoVideoNote.m; sourceTree = "<group>"; };
 		ADC02D2A1AEC5E8100AFCD11 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -151,12 +148,10 @@
 				AD2BE21E1AE3091F00EECFE0 /* AppDelegate.m */,
 				AD2BE2231AE3091F00EECFE0 /* ViewController.h */,
 				AD2BE2241AE3091F00EECFE0 /* ViewController.m */,
-				AD436FB71AE8AB84001387D1 /* MainScreen.h */,
-				AD436FB81AE8AB84001387D1 /* MainScreen.m */,
-				ADC02CEE1AEADFCD00AFCD11 /* PhotoVideoNote.h */,
-				ADC02CEF1AEADFCD00AFCD11 /* PhotoVideoNote.m */,
 				ADC02D2D1AEC5F0800AFCD11 /* SlideNStuff.h */,
 				ADC02D2E1AEC5F0800AFCD11 /* SlideNStuff.m */,
+				ADC02CEE1AEADFCD00AFCD11 /* PhotoVideoNote.h */,
+				ADC02CEF1AEADFCD00AFCD11 /* PhotoVideoNote.m */,
 				ADC02D301AEC64DA00AFCD11 /* NavigationViewController.h */,
 				ADC02D311AEC64DA00AFCD11 /* NavigationViewController.m */,
 				AD2BE2261AE3091F00EECFE0 /* Main.storyboard */,
@@ -337,7 +332,6 @@
 			files = (
 				ADC02D2C1AEC5E8100AFCD11 /* SWRevealViewController.m in Sources */,
 				AD2BE2221AE3091F00EECFE0 /* Moves.xcdatamodeld in Sources */,
-				AD436FB91AE8AB84001387D1 /* MainScreen.m in Sources */,
 				AD2BE21F1AE3091F00EECFE0 /* AppDelegate.m in Sources */,
 				AD2BE2251AE3091F00EECFE0 /* ViewController.m in Sources */,
 				ADC02CF01AEADFCD00AFCD11 /* PhotoVideoNote.m in Sources */,

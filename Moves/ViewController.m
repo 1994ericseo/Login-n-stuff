@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SWRevealViewController.h"
 
 @interface ViewController ()
 
@@ -47,7 +48,7 @@
                                                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"is_loggedon"];
                                                 
                                                 [self deactivateIndicator];
-                                                MainScreen *mainscreen = [self.storyboard instantiateViewControllerWithIdentifier:@"sw"];
+                                                SWRevealViewController *mainscreen = [self.storyboard instantiateViewControllerWithIdentifier:@"sw"];
                                                 [self presentViewController:mainscreen animated:YES completion:nil];
                                             } else {
                                                 [self deactivateIndicator];
@@ -108,7 +109,7 @@
         if (!error) {
             // Hooray! Let them use the app now.
             [self deactivateIndicator];
-            MainScreen *mainscreen = [self.storyboard instantiateViewControllerWithIdentifier:@"mainscreen"];
+            SWRevealViewController *mainscreen = [self.storyboard instantiateViewControllerWithIdentifier:@"mainscreen"];
             [self presentViewController:mainscreen animated:YES completion:nil];
         } else {
             [self deactivateIndicator];
