@@ -43,7 +43,7 @@
                             <items>
                                 <barButtonItem title="Logout" id="Wbx-WY-uU9">
                                     <connections>
-                                        <segue destination="WXz-A6-Zah" kind="presentation" id="Poo-6s-oSD"/>
+                                        <segue destination="WXz-A6-Zah" kind="presentation" modalTransitionStyle="flipHorizontal" id="Poo-6s-oSD"/>
                                     </connections>
                                 </barButtonItem>
                             </items>

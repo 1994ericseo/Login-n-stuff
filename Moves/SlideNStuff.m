@@ -146,14 +146,15 @@
     [UIView setAnimationDuration:0.3];
     [AddView setAlpha:0];
     [self.view setAlpha:1];
-    [AddView setHidden:YES];
-    [UIView commitAnimations];
-    
+    //[AddView setHidden:YES];
     self.view.userInteractionEnabled = YES;
     Navigation.leftBarButtonItem.enabled = YES;
     Navigation.rightBarButtonItem.enabled = YES;
     TitleLabel.userInteractionEnabled = YES;
     TitleLabel.alpha = 1;
+
+    [UIView commitAnimations];
+    
     
 }
 
