@@ -34,6 +34,17 @@
 		ADC02D2F1AEC5F0800AFCD11 /* SlideNStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC02D2E1AEC5F0800AFCD11 /* SlideNStuff.m */; };
 		ADC02D321AEC64DA00AFCD11 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC02D311AEC64DA00AFCD11 /* NavigationViewController.m */; };
 		ADE3A4351AE64C840055E7C3 /* thevinyll.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADE3A4341AE64C840055E7C3 /* thevinyll.jpg */; };
+		ADF548371AEEFF08006E0B2B /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF548361AEEFF08006E0B2B /* logo.png */; };
+		ADF548431AEEFF2D006E0B2B /* moventum-+.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF548391AEEFF2D006E0B2B /* moventum-+.png */; };
+		ADF548441AEEFF2D006E0B2B /* moventum-album.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF5483A1AEEFF2D006E0B2B /* moventum-album.png */; };
+		ADF548451AEEFF2D006E0B2B /* moventum-backarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF5483B1AEEFF2D006E0B2B /* moventum-backarrow.png */; };
+		ADF548461AEEFF2D006E0B2B /* moventum-film.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF5483C1AEEFF2D006E0B2B /* moventum-film.png */; };
+		ADF548471AEEFF2D006E0B2B /* moventum-note.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF5483D1AEEFF2D006E0B2B /* moventum-note.png */; };
+		ADF548481AEEFF2D006E0B2B /* moventum-photo.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF5483E1AEEFF2D006E0B2B /* moventum-photo.png */; };
+		ADF548491AEEFF2D006E0B2B /* moventum-playarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF5483F1AEEFF2D006E0B2B /* moventum-playarrow.png */; };
+		ADF5484A1AEEFF2D006E0B2B /* moventum-setting.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF548401AEEFF2D006E0B2B /* moventum-setting.png */; };
+		ADF5484B1AEEFF2D006E0B2B /* moventum-whitebox.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF548411AEEFF2D006E0B2B /* moventum-whitebox.png */; };
+		ADF5484E1AEF0133006E0B2B /* xbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF5484D1AEF0133006E0B2B /* xbutton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +94,17 @@
 		ADC02D301AEC64DA00AFCD11 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		ADC02D311AEC64DA00AFCD11 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		ADE3A4341AE64C840055E7C3 /* thevinyll.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thevinyll.jpg; sourceTree = "<group>"; };
+		ADF548361AEEFF08006E0B2B /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		ADF548391AEEFF2D006E0B2B /* moventum-+.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moventum-+.png"; sourceTree = "<group>"; };
+		ADF5483A1AEEFF2D006E0B2B /* moventum-album.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moventum-album.png"; sourceTree = "<group>"; };
+		ADF5483B1AEEFF2D006E0B2B /* moventum-backarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moventum-backarrow.png"; sourceTree = "<group>"; };
+		ADF5483C1AEEFF2D006E0B2B /* moventum-film.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moventum-film.png"; sourceTree = "<group>"; };
+		ADF5483D1AEEFF2D006E0B2B /* moventum-note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moventum-note.png"; sourceTree = "<group>"; };
+		ADF5483E1AEEFF2D006E0B2B /* moventum-photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moventum-photo.png"; sourceTree = "<group>"; };
+		ADF5483F1AEEFF2D006E0B2B /* moventum-playarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moventum-playarrow.png"; sourceTree = "<group>"; };
+		ADF548401AEEFF2D006E0B2B /* moventum-setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moventum-setting.png"; sourceTree = "<group>"; };
+		ADF548411AEEFF2D006E0B2B /* moventum-whitebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moventum-whitebox.png"; sourceTree = "<group>"; };
+		ADF5484D1AEF0133006E0B2B /* xbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xbutton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +183,8 @@
 		AD2BE2191AE3091F00EECFE0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ADF548381AEEFF2D006E0B2B /* buttonpics */,
+				ADF548361AEEFF08006E0B2B /* logo.png */,
 				ADC02D291AEC5E8100AFCD11 /* SlideOutMenuFiles */,
 				AD2BE21A1AE3091F00EECFE0 /* Info.plist */,
 				AD2BE21B1AE3091F00EECFE0 /* main.m */,
@@ -222,6 +246,23 @@
 				ADE3A4341AE64C840055E7C3 /* thevinyll.jpg */,
 			);
 			path = Pics;
+			sourceTree = "<group>";
+		};
+		ADF548381AEEFF2D006E0B2B /* buttonpics */ = {
+			isa = PBXGroup;
+			children = (
+				ADF548391AEEFF2D006E0B2B /* moventum-+.png */,
+				ADF5483A1AEEFF2D006E0B2B /* moventum-album.png */,
+				ADF5483B1AEEFF2D006E0B2B /* moventum-backarrow.png */,
+				ADF5483C1AEEFF2D006E0B2B /* moventum-film.png */,
+				ADF5483D1AEEFF2D006E0B2B /* moventum-note.png */,
+				ADF5483E1AEEFF2D006E0B2B /* moventum-photo.png */,
+				ADF5483F1AEEFF2D006E0B2B /* moventum-playarrow.png */,
+				ADF548401AEEFF2D006E0B2B /* moventum-setting.png */,
+				ADF5484D1AEF0133006E0B2B /* xbutton.png */,
+				ADF548411AEEFF2D006E0B2B /* moventum-whitebox.png */,
+			);
+			path = buttonpics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,9 +346,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD2BE2281AE3091F00EECFE0 /* Main.storyboard in Resources */,
+				ADF548441AEEFF2D006E0B2B /* moventum-album.png in Resources */,
+				ADF548371AEEFF08006E0B2B /* logo.png in Resources */,
+				ADF548461AEEFF2D006E0B2B /* moventum-film.png in Resources */,
 				AD2BE22D1AE3091F00EECFE0 /* LaunchScreen.xib in Resources */,
 				AD2BE22A1AE3091F00EECFE0 /* Images.xcassets in Resources */,
+				ADF548451AEEFF2D006E0B2B /* moventum-backarrow.png in Resources */,
+				ADF548431AEEFF2D006E0B2B /* moventum-+.png in Resources */,
+				ADF5484E1AEF0133006E0B2B /* xbutton.png in Resources */,
+				ADF5484B1AEEFF2D006E0B2B /* moventum-whitebox.png in Resources */,
+				ADF548471AEEFF2D006E0B2B /* moventum-note.png in Resources */,
+				ADF5484A1AEEFF2D006E0B2B /* moventum-setting.png in Resources */,
 				ADE3A4351AE64C840055E7C3 /* thevinyll.jpg in Resources */,
+				ADF548491AEEFF2D006E0B2B /* moventum-playarrow.png in Resources */,
+				ADF548481AEEFF2D006E0B2B /* moventum-photo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

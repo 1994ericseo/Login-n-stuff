@@ -19,6 +19,7 @@
     IBOutlet UIActivityIndicatorView *ActivityIndicator;
     IBOutlet UIButton *ForgotPassword;
     IBOutlet UIButton *CreateSignButton;
+    IBOutlet UIImageView *TitleLogo;
     
     NSDictionary *LoginDictionary;
 }

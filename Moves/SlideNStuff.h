@@ -18,6 +18,8 @@
     IBOutlet UITextField *TitleLabel;
     IBOutlet UIView *AddView;
     
+    IBOutlet UIButton *PhotoButton;
+    
     UIImagePickerController *Imagepicker;
     UIImage *image;
     UIVideoEditorController *Videopicker;
@@ -28,6 +30,7 @@
 - (IBAction)Title:(id)sender;
 - (IBAction)AddStuff:(id)sender;
 - (IBAction)Cancel:(id)sender;
+- (IBAction)EditChanged;
 
 
 

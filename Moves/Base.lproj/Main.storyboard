@@ -114,31 +114,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="28j-DB-Wil">
-                                <rect key="frame" x="49" y="119" width="276" height="366"/>
+                                <rect key="frame" x="49" y="177" width="276" height="242"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0X0-J7-WBG">
-                                        <rect key="frame" x="152" y="14" width="110" height="122"/>
-                                        <color key="backgroundColor" red="0.59625552400000004" green="0.042703498389999997" blue="0.056963192009999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Video">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="GotoVideo" destination="Ruc-yy-SRv" eventType="touchUpInside" id="zSu-KK-iFb"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0g-Pe-vb7">
-                                        <rect key="frame" x="8" y="184" width="110" height="122"/>
-                                        <color key="backgroundColor" red="0.59625552400000004" green="0.042703498389999997" blue="0.056963192009999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Note">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0g-Pe-vb7">
+                                        <rect key="frame" x="32" y="138" width="77" height="84"/>
+                                        <color key="backgroundColor" red="1" green="0.99983781410000006" blue="0.91443874069999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="moventum-note.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30p-9y-6c3">
-                                        <rect key="frame" x="152" y="184" width="110" height="122"/>
-                                        <color key="backgroundColor" red="0.59625552400000004" green="0.042703498389999997" blue="0.056963192009999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Library">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30p-9y-6c3">
+                                        <rect key="frame" x="150" y="135" width="89" height="89"/>
+                                        <color key="backgroundColor" red="1" green="0.99983781410000006" blue="0.91443874069999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="moventum-album.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -146,10 +135,10 @@
                                             <action selector="TakeFromLibrary:" destination="Ruc-yy-SRv" eventType="touchUpInside" id="rtU-2H-fTt"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwI-7I-4Ie">
-                                        <rect key="frame" x="8" y="14" width="110" height="122"/>
-                                        <color key="backgroundColor" red="0.59625552400000004" green="0.042703498389999997" blue="0.056963192009999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Photo">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwI-7I-4Ie">
+                                        <rect key="frame" x="33" y="36" width="76" height="55"/>
+                                        <color key="backgroundColor" red="1" green="0.99983781410000006" blue="0.91443874069999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="moventum-photo.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -157,9 +146,20 @@
                                             <action selector="GotoPhoto" destination="Ruc-yy-SRv" eventType="touchUpInside" id="ew6-e1-mW4"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBJ-8G-s1i">
-                                        <rect key="frame" x="110" y="314" width="57" height="30"/>
-                                        <state key="normal" title="Cancel">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0X0-J7-WBG">
+                                        <rect key="frame" x="159" y="30" width="90" height="61"/>
+                                        <color key="backgroundColor" red="1" green="0.99983781410000006" blue="0.91443874069999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="moventum-film.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="GotoVideo" destination="Ruc-yy-SRv" eventType="touchUpInside" id="zSu-KK-iFb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBJ-8G-s1i">
+                                        <rect key="frame" x="0.0" y="0.0" width="29" height="26"/>
+                                        <state key="normal" image="xbutton.png">
                                             <color key="titleColor" red="0.59625552400000004" green="0.042703498389999997" blue="0.056963192009999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -168,7 +168,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.90592532000000003" blue="0.27762402139999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.99983781410000006" blue="0.91443874069999997" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -182,10 +182,11 @@
                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
+                                <action selector="EditChanged" destination="Ruc-yy-SRv" eventType="editingChanged" id="A1L-tE-ZFa"/>
                                 <action selector="Title:" destination="Ruc-yy-SRv" eventType="editingDidEndOnExit" id="kkX-aY-0ao"/>
                             </connections>
                         </textField>
-                        <barButtonItem key="rightBarButtonItem" title="  +  " id="tJ1-xh-vBr">
+                        <barButtonItem key="rightBarButtonItem" title="asdf" id="tJ1-xh-vBr">
                             <connections>
                                 <action selector="AddStuff:" destination="Ruc-yy-SRv" id="131-3A-e0l"/>
                             </connections>
@@ -196,6 +197,7 @@
                     <connections>
                         <outlet property="AddView" destination="28j-DB-Wil" id="P9u-oK-rZF"/>
                         <outlet property="Navigation" destination="fUV-3B-vLn" id="gbJ-R5-AQP"/>
+                        <outlet property="PhotoButton" destination="qwI-7I-4Ie" id="vWD-3Z-CyY"/>
                         <outlet property="TitleLabel" destination="vMM-8G-A9O" id="qxL-zJ-ePq"/>
                         <outlet property="barButton" destination="QCb-XP-hQb" id="3vR-F4-tzl"/>
                         <outlet property="searchDisplayController" destination="pYK-I5-Hcr" id="OmZ-Er-bWt"/>
@@ -227,21 +229,21 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHu-mw-9Ni">
                                 <rect key="frame" x="0.0" y="239" width="375" height="44"/>
-                                <color key="backgroundColor" red="1" green="0.73136385559999995" blue="0.6821852115" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.99983781410000006" blue="0.91443874069999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ks1-3v-TU9">
                                 <rect key="frame" x="0.0" y="193" width="375" height="44"/>
-                                <color key="backgroundColor" red="1" green="0.73136385559999995" blue="0.6821852115" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.99983781410000006" blue="0.91443874069999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yl-9D-sXV">
                                 <rect key="frame" x="113" y="297" width="149" height="35"/>
-                                <color key="backgroundColor" red="0.59625552400000004" green="0.042703498389999997" blue="0.056963192009999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.55460858585858586" green="0.062830825194705606" blue="0.089521793749518117" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -251,10 +253,6 @@
                                     <action selector="LoginButton" destination="WXz-A6-Zah" eventType="touchUpInside" id="w25-WU-1at"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="thevinyll.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="XlK-Mg-lxz">
-                                <rect key="frame" x="67" y="20" width="240" height="155"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HU-Gl-DY9">
                                 <rect key="frame" x="141" y="352" width="93" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -265,7 +263,7 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4oF-Lf-oa3">
                                 <rect key="frame" x="16" y="239" width="343" height="44"/>
-                                <color key="backgroundColor" red="1" green="0.73136385559999995" blue="0.6821852115" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.99983781410000006" blue="0.91443874069999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
@@ -279,7 +277,7 @@
                             </activityIndicatorView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email or username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zqZ-1j-7j9">
                                 <rect key="frame" x="16" y="193" width="343" height="44"/>
-                                <color key="backgroundColor" red="1" green="0.73136385561571415" blue="0.6821852115020075" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.99983781413961281" blue="0.91443874069107511" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
@@ -297,6 +295,9 @@
                                     <action selector="CreateOrSign:" destination="WXz-A6-Zah" eventType="touchUpInside" id="1CA-5U-aZA"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hws-wm-cCN">
+                                <rect key="frame" x="67" y="29" width="240" height="139"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -308,6 +309,7 @@
                         <outlet property="ForgotPassword" destination="4HU-Gl-DY9" id="1lb-kV-wej"/>
                         <outlet property="PasswordField" destination="4oF-Lf-oa3" id="N3Y-xN-r55"/>
                         <outlet property="SignInButton" destination="3yl-9D-sXV" id="vmr-7h-p84"/>
+                        <outlet property="TitleLogo" destination="Hws-wm-cCN" id="F7P-Vt-Bi8"/>
                         <outlet property="UserField" destination="zqZ-1j-7j9" id="kIG-5j-p6m"/>
                     </connections>
                 </viewController>
@@ -317,7 +319,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="thevinyll.jpg" width="596" height="375"/>
+        <image name="logo.png" width="353" height="117"/>
+        <image name="moventum-album.png" width="89" height="89"/>
+        <image name="moventum-film.png" width="102" height="61"/>
+        <image name="moventum-note.png" width="77" height="84"/>
+        <image name="moventum-photo.png" width="73" height="55"/>
+        <image name="xbutton.png" width="42" height="39"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="uBk-KH-Bup"/>

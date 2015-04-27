@@ -30,6 +30,8 @@
     [self.view addGestureRecognizer:tap];
     AddView.alpha = 0;
     AddView.hidden = YES;
+    
+    //set navigation color
 }
 
 - (void)didReceiveMemoryWarning {
@@ -120,12 +122,7 @@
 
 #pragma Title
 - (IBAction)Title:(id)sender {
-    NSString *savestring = TitleLabel.text;
     [self resignFirstResponder];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:savestring forKey:@"savedstring"];
-    [defaults synchronize];
 }
 
 - (IBAction)AddStuff:(id)sender {
@@ -133,7 +130,7 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
     [AddView setAlpha:1.0];
-    [self.view setAlpha:0.8f];
+    //[self.view setAlpha:0.8f];
     [UIView commitAnimations];
     
     
@@ -158,6 +155,13 @@
     TitleLabel.userInteractionEnabled = YES;
     TitleLabel.alpha = 1;
     
+}
+
+- (IBAction)EditChanged {
+    NSString *savestring = TitleLabel.text;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:savestring forKey:@"savedstring"];
+    [defaults synchronize];
 }
 
 - (void)LoadTitle {

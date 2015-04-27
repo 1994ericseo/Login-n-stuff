@@ -21,6 +21,9 @@
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"is_loggedon"];
     [PFUser logOut];
     
+    //animate Logo
+    
+    
     //For dismissing keyboard
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
