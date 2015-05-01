@@ -176,7 +176,7 @@
                     <navigationItem key="navigationItem" id="fUV-3B-vLn">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="- - -" id="QCb-XP-hQb"/>
-                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Title" textAlignment="center" minimumFontSize="17" id="vMM-8G-A9O">
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Move Category" textAlignment="center" minimumFontSize="17" id="vMM-8G-A9O">
                             <rect key="frame" x="76" y="7" width="224" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
