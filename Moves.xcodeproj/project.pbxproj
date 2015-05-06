@@ -35,6 +35,7 @@
 		ADC02D2F1AEC5F0800AFCD11 /* SlideNStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC02D2E1AEC5F0800AFCD11 /* SlideNStuff.m */; };
 		ADC02D321AEC64DA00AFCD11 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC02D311AEC64DA00AFCD11 /* NavigationViewController.m */; };
 		ADE3A4351AE64C840055E7C3 /* thevinyll.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADE3A4341AE64C840055E7C3 /* thevinyll.jpg */; };
+		ADE73F391AFA1B00007148D4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADE73F381AFA1B00007148D4 /* CoreData.framework */; };
 		ADF548371AEEFF08006E0B2B /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF548361AEEFF08006E0B2B /* logo.png */; };
 		ADF548431AEEFF2D006E0B2B /* moventum-+.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF548391AEEFF2D006E0B2B /* moventum-+.png */; };
 		ADF548441AEEFF2D006E0B2B /* moventum-album.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF5483A1AEEFF2D006E0B2B /* moventum-album.png */; };
@@ -97,6 +98,7 @@
 		ADC02D301AEC64DA00AFCD11 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		ADC02D311AEC64DA00AFCD11 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		ADE3A4341AE64C840055E7C3 /* thevinyll.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thevinyll.jpg; sourceTree = "<group>"; };
+		ADE73F381AFA1B00007148D4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		ADF548361AEEFF08006E0B2B /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		ADF548391AEEFF2D006E0B2B /* moventum-+.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moventum-+.png"; sourceTree = "<group>"; };
 		ADF5483A1AEEFF2D006E0B2B /* moventum-album.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moventum-album.png"; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADE73F391AFA1B00007148D4 /* CoreData.framework in Frameworks */,
 				AD3815AF1AE5ACA7009C6461 /* Accounts.framework in Frameworks */,
 				AD3815B01AE5ACA7009C6461 /* Social.framework in Frameworks */,
 				AD3815A21AE5AC92009C6461 /* AudioToolbox.framework in Frameworks */,
@@ -217,6 +220,7 @@
 		AD3815961AE5ABD6009C6461 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ADE73F381AFA1B00007148D4 /* CoreData.framework */,
 				AD3815AD1AE5ACA7009C6461 /* Accounts.framework */,
 				AD3815AE1AE5ACA7009C6461 /* Social.framework */,
 				AD3815971AE5AC92009C6461 /* AudioToolbox.framework */,

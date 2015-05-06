@@ -178,7 +178,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="fUV-3B-vLn">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="- - -" id="QCb-XP-hQb"/>
+                        <barButtonItem key="leftBarButtonItem" title="Other" id="QCb-XP-hQb"/>
                         <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Move Category" textAlignment="center" minimumFontSize="17" id="vMM-8G-A9O">
                             <rect key="frame" x="76" y="7" width="224" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -189,7 +189,7 @@
                                 <action selector="Title:" destination="Ruc-yy-SRv" eventType="editingDidEndOnExit" id="kkX-aY-0ao"/>
                             </connections>
                         </textField>
-                        <barButtonItem key="rightBarButtonItem" title="  +  " id="tJ1-xh-vBr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tJ1-xh-vBr">
                             <connections>
                                 <action selector="AddStuff:" destination="Ruc-yy-SRv" id="131-3A-e0l"/>
                             </connections>
