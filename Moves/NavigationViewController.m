@@ -69,7 +69,7 @@
     /*[defaults setObject:Table forKey:@"theTable"];
     [defaults synchronize]; */
     
-    cell.textLabel.text = @"lol";
+    cell.textLabel.text = @"Moves";
 
     
     return cell;
@@ -97,9 +97,6 @@
     }
     
 }
-
-
-
 
 
 

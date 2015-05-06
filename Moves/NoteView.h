@@ -10,7 +10,12 @@
 #import <CoreData/CoreData.h>
 #import "SlideNStuff.h"
 
-@interface NoteView : UIViewController
+@interface NoteView : UIViewController {
+    
+    IBOutlet UITextView *theNotes;
+    IBOutlet UIButton *done;
+    IBOutlet UINavigationItem *Navi;
+}
 
 
 @property (strong, nonatomic) IBOutlet UILabel *Date;
@@ -21,5 +26,10 @@
 @property (strong) NSManagedObject *move;
 - (IBAction)doneAction:(id)sender;
 - (IBAction)cancelAction:(id)sender;
+
+- (IBAction)finishText:(id)sender;
+
+
+
 
 @end

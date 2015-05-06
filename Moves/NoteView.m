@@ -42,7 +42,18 @@
     NSString *currentTime = [dateFormatter stringFromDate:today];
     Date.text = currentTime;
     
-    [Note becomeFirstResponder];
+    //[Note becomeFirstResponder];
+    //[self textFieldDidBeginEditing:Title];
+    
+    Note.delegate = self;
+    theNotes.delegate = self;
+    
+    //For dismissing keyboard
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+
     
     
     if (move) {
@@ -111,4 +122,62 @@
 - (IBAction)cancelAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+    //Keyboard becomes visible
+    self.view.frame = CGRectMake(self.view.frame.origin.x,
+                                 self.view.frame.origin.y,
+                                 self.view.frame.size.width,
+                                 self.view.frame.size.height - 215 + 50);   //resize
+}
+
+
+-(void)dismissKeyboard {
+    [Title resignFirstResponder];
+    [Note resignFirstResponder];
+}
+
+
+
+
+
+-(void)textViewDidBeginEditing:(UITextView *)textView {
+    if ([textView.text isEqualToString:@"Enter notes here"]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor]; //optional
+    }
+    
+    theNotes.hidden = NO;
+    [theNotes becomeFirstResponder];
+    done.hidden = NO;
+    Title.enabled = NO;
+    Title.alpha = 0.2f;
+    Navi.leftBarButtonItem.enabled = NO;
+    Navi.rightBarButtonItem.enabled = NO;
+    
+}
+
+-(void)textViewDidEndEditing:(UITextView *)textView {
+    
+}
+
+-(void)textViewDidChange:(UITextView *)textView
+{
+    Note.text = theNotes.text;
+}
+
+
+- (IBAction)finishText:(id)sender {
+    [theNotes resignFirstResponder];
+    theNotes.hidden = YES;
+    done.hidden = YES;
+    Title.enabled = YES;
+    Title.alpha = 1;
+    Navi.leftBarButtonItem.enabled = YES;
+    Navi.rightBarButtonItem.enabled = YES;
+}
+
+
+
 @end

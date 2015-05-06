@@ -34,6 +34,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.revealViewController.panGestureRecognizer.enabled = NO;
+    
     
     
     
@@ -100,6 +102,7 @@
 - (IBAction)GotoPhoto {
     Imagepicker = [[UIImagePickerController alloc] init];
     Imagepicker.delegate = self;
+    Imagepicker.allowsEditing = YES;
     [Imagepicker setSourceType:UIImagePickerControllerSourceTypeCamera];
     [self presentViewController:Imagepicker animated:YES completion:NULL];
 }
@@ -141,8 +144,10 @@
     cameraUI.mediaTypes = [[NSArray alloc] initWithObjects:(NSString *)kUTTypeMovie, nil];
     // Hides the controls for moving & scaling pictures, or for
     // trimming movies. To instead show the controls, use YES.
-    cameraUI.allowsEditing = NO;
+    //cameraUI.allowsEditing = NO;
+    cameraUI.allowsEditing = YES;
     cameraUI.delegate = delegate;
+    
     // 3 - Display image picker
     [controller presentModalViewController: cameraUI animated: YES];
     return YES;
