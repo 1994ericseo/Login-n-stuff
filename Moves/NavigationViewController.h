@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "SlideNStuff.h"
 
 @interface NavigationViewController : UITableViewController {
     
     IBOutlet UITableView *Table;
 }
+
 
 
 @end

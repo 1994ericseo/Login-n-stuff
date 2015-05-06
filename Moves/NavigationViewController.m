@@ -21,6 +21,8 @@
     [super viewDidLoad];
     menu = @[@"first"];
     
+
+    
     
 }
 
@@ -50,11 +52,28 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    //NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    /*NSString *loadstring = [defaults objectForKey:@"savedstring"];
+    if ([loadstring isEqualToString:@""]) {
+        cell.textLabel.text = @"No Title";
+    }
+    else {
+        cell.textLabel.text = loadstring;
+    }*/
+    /*[defaults setObject:Table forKey:@"theTable"];
+    [defaults synchronize]; */
+    
+    cell.textLabel.text = @"lol";
+
     
     return cell;
 }
 
-
+- (void) changeName: (NSString*)word {
+    NSIndexPath *firstRow = [NSIndexPath indexPathForRow:0 inSection:0];
+    UITableViewCell *cell = [Table cellForRowAtIndexPath:firstRow];
+    cell.textLabel.text = word;
+}
 
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -72,6 +91,15 @@
     }
     
 }
+
+
+
+
+
+
+
+
+
 
 
 @end

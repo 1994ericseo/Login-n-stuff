@@ -31,7 +31,7 @@
     AddView.alpha = 0;
     AddView.hidden = YES;
     
-    //set navigation color
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,6 +61,11 @@
 
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    //SAVE THE PHOTO
+    /*NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:image forKey:@"savedpicture"];
+    [defaults synchronize]; */
+    
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -163,6 +168,13 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:savestring forKey:@"savedstring"];
     [defaults synchronize];
+    
+    /*UITableView* table = [defaults objectForKey:@"theTable"];
+    NSIndexPath *firstRow = [NSIndexPath indexPathForRow:0 inSection:0];
+    UITableViewCell *cell = [table cellForRowAtIndexPath:firstRow];
+    cell.textLabel.text = savestring; */
+    
+    
 }
 
 - (void)LoadTitle {

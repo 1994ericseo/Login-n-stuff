@@ -30,6 +30,7 @@
 		AD3815AC1AE5AC92009C6461 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3815A11AE5AC92009C6461 /* SystemConfiguration.framework */; };
 		AD3815AF1AE5ACA7009C6461 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3815AD1AE5ACA7009C6461 /* Accounts.framework */; };
 		AD3815B01AE5ACA7009C6461 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3815AE1AE5ACA7009C6461 /* Social.framework */; };
+		AD5F4E251AF843DA00E037EF /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5F4E241AF843DA00E037EF /* NoteView.m */; };
 		ADC02D2C1AEC5E8100AFCD11 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC02D2B1AEC5E8100AFCD11 /* SWRevealViewController.m */; };
 		ADC02D2F1AEC5F0800AFCD11 /* SlideNStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC02D2E1AEC5F0800AFCD11 /* SlideNStuff.m */; };
 		ADC02D321AEC64DA00AFCD11 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC02D311AEC64DA00AFCD11 /* NavigationViewController.m */; };
@@ -87,6 +88,8 @@
 		AD3815A11AE5AC92009C6461 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AD3815AD1AE5ACA7009C6461 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		AD3815AE1AE5ACA7009C6461 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		AD5F4E231AF843DA00E037EF /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteView.h; sourceTree = "<group>"; };
+		AD5F4E241AF843DA00E037EF /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteView.m; sourceTree = "<group>"; };
 		ADC02D2A1AEC5E8100AFCD11 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		ADC02D2B1AEC5E8100AFCD11 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		ADC02D2D1AEC5F0800AFCD11 /* SlideNStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNStuff.h; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				ADC02D2E1AEC5F0800AFCD11 /* SlideNStuff.m */,
 				ADC02D301AEC64DA00AFCD11 /* NavigationViewController.h */,
 				ADC02D311AEC64DA00AFCD11 /* NavigationViewController.m */,
+				AD5F4E231AF843DA00E037EF /* NoteView.h */,
+				AD5F4E241AF843DA00E037EF /* NoteView.m */,
 				AD2BE2261AE3091F00EECFE0 /* Main.storyboard */,
 				AD2BE2291AE3091F00EECFE0 /* Images.xcassets */,
 				AD2BE22B1AE3091F00EECFE0 /* LaunchScreen.xib */,
@@ -383,6 +388,7 @@
 				AD2BE2251AE3091F00EECFE0 /* ViewController.m in Sources */,
 				AD2BE21C1AE3091F00EECFE0 /* main.m in Sources */,
 				ADC02D2F1AEC5F0800AFCD11 /* SlideNStuff.m in Sources */,
+				AD5F4E251AF843DA00E037EF /* NoteView.m in Sources */,
 				ADC02D321AEC64DA00AFCD11 /* NavigationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

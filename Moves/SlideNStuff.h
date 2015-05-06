@@ -10,10 +10,13 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "NavigationViewController.h"
+
+
+
 
 @interface SlideNStuff : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIVideoEditorControllerDelegate>
 {
-    
     IBOutlet UINavigationItem *Navigation;
     IBOutlet UITextField *TitleLabel;
     IBOutlet UIView *AddView;
@@ -23,7 +26,13 @@
     UIImagePickerController *Imagepicker;
     UIImage *image;
     UIVideoEditorController *Videopicker;
+    
+    
 }
+
+
+
+
 - (IBAction)GotoPhoto;
 - (IBAction)GotoVideo;
 - (IBAction)TakeFromLibrary:(id)sender;
