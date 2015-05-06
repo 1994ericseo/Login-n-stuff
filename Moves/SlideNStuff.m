@@ -33,8 +33,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [TableView reloadData];
-    
     
     
     
@@ -67,6 +65,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
+    
+    [self initialView];
     
     //here we get the moves from the persistent data source (or the database)
     NSManagedObjectContext *moc = [self managedObjectContext];
@@ -164,7 +164,9 @@
 - (IBAction)TakeFromLibrary:(id)sender {
     Imagepicker = [[UIImagePickerController alloc] init];
     Imagepicker.delegate = self;
-    [Imagepicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    Imagepicker.allowsEditing = YES;
+    Imagepicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    Imagepicker.mediaTypes =[UIImagePickerController availableMediaTypesForSourceType:Imagepicker.sourceType];
     [self presentViewController:Imagepicker animated:YES completion:NULL];
 }
 
@@ -192,10 +194,20 @@
     [self.view bringSubviewToFront:AddView];
     
     //actual process
-    
-    
-    
-    
+}
+
+- (void)initialView {
+    [AddView setAlpha:0];
+    [self.view setAlpha:1];
+    //[AddView setHidden:YES];
+    self.view.userInteractionEnabled = YES;
+    Navigation.leftBarButtonItem.enabled = YES;
+    Navigation.rightBarButtonItem.enabled = YES;
+    TitleLabel.userInteractionEnabled = YES;
+    TitleLabel.alpha = 1;
+    TableView.userInteractionEnabled = YES;
+    TableView.alpha = 1;
+
 }
 
 - (IBAction)Cancel:(id)sender {
@@ -213,17 +225,6 @@
     TableView.alpha = 1;
     
     [UIView commitAnimations];
-}
-
-- (void)initialView {
-    [AddView setAlpha:0];
-    [self.view setAlpha:1];
-    self.view.userInteractionEnabled = YES;
-    Navigation.leftBarButtonItem.enabled = YES;
-    Navigation.rightBarButtonItem.enabled = YES;
-    TitleLabel.userInteractionEnabled = YES;
-    TitleLabel.alpha = 1;
-
 }
 
 - (IBAction)EditChanged {
