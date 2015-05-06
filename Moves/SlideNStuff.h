@@ -12,11 +12,12 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "NavigationViewController.h"
+#import "NoteView.h"
 
 
 
 
-@interface SlideNStuff : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIVideoEditorControllerDelegate>
+@interface SlideNStuff : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIVideoEditorControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     IBOutlet UINavigationItem *Navigation;
     IBOutlet UITextField *TitleLabel;
@@ -30,6 +31,8 @@
     
     
 }
+@property (strong, nonatomic) IBOutlet UITableView *TableView;
+@property (strong, nonatomic) NSMutableArray *movesArray;
 
 
 

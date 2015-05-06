@@ -10,10 +10,11 @@
 #import "SWRevealViewController.h"
 
 @interface SlideNStuff ()
-
 @end
 
 @implementation SlideNStuff
+@synthesize TableView;
+@synthesize movesArray;
 
 
 
@@ -27,9 +28,22 @@
     return context;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"UpdateMove"]) { //set the transition identifier to UpdateCar
+        NSManagedObject *selectedMove = [movesArray objectAtIndex:[[self.TableView indexPathForSelectedRow] row]];
+        NoteView *destViewController = segue.destinationViewController;
+        destViewController.move = selectedMove;
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    
+    
+    
     [self LoadTitle];
     _barButton.target = self.revealViewController;
     _barButton.action = @selector(revealToggle:);
@@ -46,20 +60,34 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    //here we get the cars from the persistent data source (or the database)
+    NSManagedObjectContext *moc = [self managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Moves"];
+    movesArray = [[moc executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    
+    [self.TableView reloadData];
+    
+}
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 
 
@@ -75,8 +103,8 @@
     image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
     //SAVE THE PHOTO
     /*NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:image forKey:@"savedpicture"];
-    [defaults synchronize]; */
+     [defaults setObject:image forKey:@"savedpicture"];
+     [defaults synchronize]; */
     
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
@@ -154,6 +182,7 @@
     Navigation.rightBarButtonItem.enabled = NO;
     TitleLabel.userInteractionEnabled = NO;
     TitleLabel.alpha = 0.2f;
+    [self.view bringSubviewToFront:AddView];
     
     //actual process
     
@@ -173,7 +202,7 @@
     Navigation.rightBarButtonItem.enabled = YES;
     TitleLabel.userInteractionEnabled = YES;
     TitleLabel.alpha = 1;
-
+    
     [UIView commitAnimations];
     
     
@@ -186,9 +215,9 @@
     [defaults synchronize];
     
     /*UITableView* table = [defaults objectForKey:@"theTable"];
-    NSIndexPath *firstRow = [NSIndexPath indexPathForRow:0 inSection:0];
-    UITableViewCell *cell = [table cellForRowAtIndexPath:firstRow];
-    cell.textLabel.text = savestring; */
+     NSIndexPath *firstRow = [NSIndexPath indexPathForRow:0 inSection:0];
+     UITableViewCell *cell = [table cellForRowAtIndexPath:firstRow];
+     cell.textLabel.text = savestring; */
     
     
 }
@@ -202,4 +231,89 @@
 -(void)dismissKeyboard {
     [TitleLabel resignFirstResponder];
 }
+
+
+
+
+
+#pragma mark UITableViewDelegate
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    // Return the number of rows in the section.
+    return movesArray.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    //configure the cell
+    NSManagedObject *move = [movesArray objectAtIndex:indexPath.row];
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@", [move valueForKey:@"title"]]];
+    //[cell.detailTextLabel setText:[move valueForKey:@"date"]];
+    
+    return cell;
+}
+
+
+
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+
+
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSManagedObjectContext *context = [self  managedObjectContext];
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //delete the object from database
+        [context deleteObject:[movesArray objectAtIndex:indexPath.row]];
+        
+        //invoke the "save" method to commit change
+        NSError *error = nil;
+        if (![context save:&error]) {
+            NSLog(@"Can't delete! %@ %@", error, [error localizedDescription]);
+            return;
+        }
+        
+        //remove car from table view
+        [movesArray removeObjectAtIndex:indexPath.row];
+        [self.TableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
+
+/*
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
+
+/*
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
+
+
+
+
+
+
 @end
