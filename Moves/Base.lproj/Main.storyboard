@@ -124,7 +124,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="HpW-bJ-Z7M" kind="show" id="RQr-09-sI9"/>
+                                            <segue destination="HpW-bJ-Z7M" kind="push" id="RQr-09-sI9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwI-7I-4Ie">
@@ -218,6 +218,34 @@
             </objects>
             <point key="canvasLocation" x="963.5" y="1191.5"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="hW4-LM-Qfe">
+            <objects>
+                <tableViewController id="8zT-bf-Awt" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xGt-ph-XWN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tOc-OM-V1e">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tOc-OM-V1e" id="3Hl-n1-Ps3">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8zT-bf-Awt" id="ldS-iE-9h3"/>
+                            <outlet property="delegate" destination="8zT-bf-Awt" id="aLC-8R-c5z"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="FbH-GA-HuI"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Se-k8-ISL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1808.5" y="1919.5"/>
+        </scene>
         <!--Note View-->
         <scene sceneID="xKD-62-jDj">
             <objects>
@@ -241,13 +269,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6T-Co-Lwm">
-                                <rect key="frame" x="313" y="54" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sR-IC-AUR">
                                 <rect key="frame" x="16" y="58" width="157" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -262,11 +283,24 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="yQy-AH-eGz">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nKP-6s-TUc">
+                            <connections>
+                                <action selector="cancelAction:" destination="HpW-bJ-Z7M" id="uhy-cL-o4C"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="FZP-P3-ocs">
+                            <connections>
+                                <action selector="doneAction:" destination="HpW-bJ-Z7M" id="Geu-XO-yvg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="Date" destination="6sR-IC-AUR" id="IU0-nk-Gll"/>
-                        <outlet property="Text" destination="1f9-Pd-NDL" id="qgc-eN-YKy"/>
+                        <outlet property="Media" destination="Cw8-a3-yzN" id="Vzm-aX-VXz"/>
+                        <outlet property="Note" destination="1f9-Pd-NDL" id="Md2-Wf-6su"/>
                         <outlet property="Title" destination="DVe-Gi-SVb" id="xvb-S3-8II"/>
                     </connections>
                 </viewController>
@@ -375,6 +409,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gWt-pg-Rl3" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-393.5" y="-349.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RjD-uk-Key">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yd0-Q9-qay" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Eq-L4-IEB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8zT-bf-Awt" kind="relationship" relationship="rootViewController" id="QaN-XA-rRv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="82u-Ed-JoG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="997" y="1920"/>
         </scene>
     </scenes>
     <resources>

@@ -13,9 +13,12 @@
 @end
 
 @implementation NoteView
-@synthesize Text;
 @synthesize Title;
 @synthesize Date;
+@synthesize Note;
+@synthesize Media;
+
+@synthesize move;
 
 
 
@@ -39,7 +42,16 @@
     NSString *currentTime = [dateFormatter stringFromDate:today];
     Date.text = currentTime;
     
-    [Text becomeFirstResponder];
+    [Note becomeFirstResponder];
+    
+    
+    if (move) {
+        [Title setText:[move valueForKey:@"title"]];
+        [Date setText:[move valueForKey:@"date"]];
+        [Note setText:[move valueForKey:@"note"]];
+        //NEED TO CHANGE
+        [Media setImage:[move valueForKey:@"media"]];
+    }
     
 }
 
@@ -58,4 +70,45 @@
 }
 */
 
+- (IBAction)doneAction:(id)sender {
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    if (move) {
+        //update existing car
+        [move setValue:Title.text forKey:@"title"];
+        [move setValue:Date.text forKey:@"date"];
+        [move setValue:Note.text forKey:@"note"];
+        //NEED TO CHANGE
+        [move setValue:Media.image forKey:@"media"];
+    }
+    
+    
+    else {
+        //create a new car
+        NSManagedObject *newMove = [NSEntityDescription insertNewObjectForEntityForName:@"Moves" inManagedObjectContext:context];
+        [newMove setValue:Title.text forKey:@"title"];
+        [newMove setValue:Date.text forKey:@"date"];
+        [newMove setValue:Note.text forKey:@"note"];
+        //NEED TO CHANGE
+        [newMove setValue:Media.image forKey:@"media"];
+    }
+    
+    
+    //TO SAVE DATA
+    NSError *error = nil;
+    if (![context save:&error]) {
+        NSLog(@"Save Failed! %@ %@", error, [error localizedDescription]);
+    }
+    
+    
+    
+    //MAKE SURE TRANSITION IS "PUSH"
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    
+}
+
+- (IBAction)cancelAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

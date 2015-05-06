@@ -14,7 +14,11 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *Date;
 @property (strong, nonatomic) IBOutlet UITextField *Title;
-@property (strong, nonatomic) IBOutlet UITextView *Text;
+@property (strong, nonatomic) IBOutlet UITextView *Note;
+@property (strong, nonatomic) IBOutlet UIImageView *Media;
+
 @property (strong) NSManagedObject *move;
+- (IBAction)doneAction:(id)sender;
+- (IBAction)cancelAction:(id)sender;
 
 @end
