@@ -50,7 +50,7 @@
         [Date setText:[move valueForKey:@"date"]];
         [Note setText:[move valueForKey:@"note"]];
         //NEED TO CHANGE
-        [Media setImage:[move valueForKey:@"media"]];
+        //[Media setImage:[move valueForKey:@"media"]];
     }
     
 }
@@ -79,7 +79,7 @@
         [move setValue:Date.text forKey:@"date"];
         [move setValue:Note.text forKey:@"note"];
         //NEED TO CHANGE
-        [move setValue:Media.image forKey:@"media"];
+        //[move setValue:Media.image forKey:@"media"];
     }
     
     
@@ -90,7 +90,7 @@
         [newMove setValue:Date.text forKey:@"date"];
         [newMove setValue:Note.text forKey:@"note"];
         //NEED TO CHANGE
-        [newMove setValue:Media.image forKey:@"media"];
+        //[newMove setValue:Media.image forKey:@"media"];
     }
     
     

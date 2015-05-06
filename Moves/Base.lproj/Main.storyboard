@@ -82,7 +82,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iHe-l2-WqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="171.5" y="423.5"/>
+            <point key="canvasLocation" x="215.5" y="421.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Ku-5Q-nwL">
@@ -99,7 +99,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AKT-lj-T3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="443.5" y="1211.5"/>
+            <point key="canvasLocation" x="417.5" y="1431.5"/>
         </scene>
         <!--SlideN Stuff-->
         <scene sceneID="31m-Gr-THB">
@@ -197,6 +197,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="HpW-bJ-Z7M" kind="show" identifier="UpdateMove" id="gqt-GQ-mcN"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -424,6 +427,7 @@
         <image name="xbutton.png" width="42" height="39"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uBk-KH-Bup"/>
+        <segue reference="U0A-tn-FXf"/>
+        <segue reference="gqt-GQ-mcN"/>
     </inferredMetricsTieBreakers>
 </document>

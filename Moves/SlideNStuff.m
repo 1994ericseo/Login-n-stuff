@@ -15,6 +15,7 @@
 @implementation SlideNStuff
 @synthesize TableView;
 @synthesize movesArray;
+@synthesize barButton;
 
 
 
@@ -28,13 +29,6 @@
     return context;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"UpdateMove"]) { //set the transition identifier to UpdateCar
-        NSManagedObject *selectedMove = [movesArray objectAtIndex:[[self.TableView indexPathForSelectedRow] row]];
-        NoteView *destViewController = segue.destinationViewController;
-        destViewController.move = selectedMove;
-    }
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,9 +38,10 @@
     
     
     
+    
     [self LoadTitle];
-    _barButton.target = self.revealViewController;
-    _barButton.action = @selector(revealToggle:);
+    barButton.target = self.revealViewController;
+    barButton.action = @selector(revealToggle:);
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     //dismiss keyboard
@@ -60,10 +55,19 @@
     
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"UpdateMove"]) { //set the transition identifier to UpdateCar
+        NSManagedObject *selectedMove = [movesArray objectAtIndex:[[self.TableView indexPathForSelectedRow] row]];
+        NoteView *destViewController = segue.destinationViewController;
+        destViewController.move = selectedMove;
+    }
+}
+
 - (void)viewDidAppear:(BOOL)animated {
+    
     [super viewDidAppear:animated];
     
-    //here we get the cars from the persistent data source (or the database)
+    //here we get the moves from the persistent data source (or the database)
     NSManagedObjectContext *moc = [self managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Moves"];
     movesArray = [[moc executeFetchRequest:fetchRequest error:nil] mutableCopy];
@@ -204,8 +208,17 @@
     TitleLabel.alpha = 1;
     
     [UIView commitAnimations];
-    
-    
+}
+
+- (void)initialView {
+    [AddView setAlpha:0];
+    [self.view setAlpha:1];
+    self.view.userInteractionEnabled = YES;
+    Navigation.leftBarButtonItem.enabled = YES;
+    Navigation.rightBarButtonItem.enabled = YES;
+    TitleLabel.userInteractionEnabled = YES;
+    TitleLabel.alpha = 1;
+
 }
 
 - (IBAction)EditChanged {
@@ -259,7 +272,7 @@
     //configure the cell
     NSManagedObject *move = [movesArray objectAtIndex:indexPath.row];
     [cell.textLabel setText:[NSString stringWithFormat:@"%@", [move valueForKey:@"title"]]];
-    //[cell.detailTextLabel setText:[move valueForKey:@"date"]];
+    [cell.detailTextLabel setText:[move valueForKey:@"date"]];
     
     return cell;
 }
@@ -277,7 +290,7 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSManagedObjectContext *context = [self  managedObjectContext];
+    NSManagedObjectContext *context = [self managedObjectContext];
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         //delete the object from database
