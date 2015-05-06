@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-@interface NoteView : UIViewController {
-    
-    IBOutlet UITextField *TitleField;
-    IBOutlet UITextView *TextField;
-    IBOutlet UILabel *DateLabel;
-}
+@interface NoteView : UIViewController
+
+
+@property (strong, nonatomic) IBOutlet UILabel *Date;
+@property (strong, nonatomic) IBOutlet UITextField *Title;
+@property (strong, nonatomic) IBOutlet UITextView *Text;
+@property (strong) NSManagedObject *move;
 
 @end

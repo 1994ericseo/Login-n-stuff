@@ -15,6 +15,18 @@
 
 @implementation SlideNStuff
 
+
+
+//we need this to retreive managed object context and later save the device data
+- (NSManagedObjectContext *)managedObjectContext {
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -137,13 +149,17 @@
     [AddView setAlpha:1.0];
     //[self.view setAlpha:0.8f];
     [UIView commitAnimations];
-    
-    
     //make all buttons Disabled plz
     Navigation.leftBarButtonItem.enabled = NO;
     Navigation.rightBarButtonItem.enabled = NO;
     TitleLabel.userInteractionEnabled = NO;
     TitleLabel.alpha = 0.2f;
+    
+    //actual process
+    
+    
+    
+    
 }
 
 - (IBAction)Cancel:(id)sender {

@@ -13,6 +13,21 @@
 @end
 
 @implementation NoteView
+@synthesize Text;
+@synthesize Title;
+@synthesize Date;
+
+
+
+//we need this to retreive managed object context and later save the device data
+- (NSManagedObjectContext *)managedObjectContext {
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,9 +37,9 @@
     [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
     NSString *currentTime = [dateFormatter stringFromDate:today];
-    DateLabel.text = currentTime;
+    Date.text = currentTime;
     
-    [TextField becomeFirstResponder];
+    [Text becomeFirstResponder];
     
 }
 

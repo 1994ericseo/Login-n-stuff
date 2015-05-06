@@ -17,6 +17,21 @@
     NSArray *menu;
 }
 
+
+
+//we need this to retreive managed object context and later save the device data
+- (NSManagedObjectContext *)managedObjectContext {
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
+
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     menu = @[@"first"];

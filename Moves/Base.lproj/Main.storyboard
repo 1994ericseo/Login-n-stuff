@@ -231,7 +231,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1f9-Pd-NDL">
-                                <rect key="frame" x="0.0" y="106" width="375" height="497"/>
+                                <rect key="frame" x="0.0" y="407" width="375" height="196"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -254,6 +254,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cw8-a3-yzN">
+                                <rect key="frame" x="0.0" y="146" width="375" height="300"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -261,9 +265,9 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="DateLabel" destination="6sR-IC-AUR" id="Z9T-Nu-OqC"/>
-                        <outlet property="TextField" destination="1f9-Pd-NDL" id="rTW-uT-1A5"/>
-                        <outlet property="TitleField" destination="DVe-Gi-SVb" id="ABN-Ev-Qlf"/>
+                        <outlet property="Date" destination="6sR-IC-AUR" id="IU0-nk-Gll"/>
+                        <outlet property="Text" destination="1f9-Pd-NDL" id="qgc-eN-YKy"/>
+                        <outlet property="Title" destination="DVe-Gi-SVb" id="xvb-S3-8II"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNk-dF-4FE" userLabel="First Responder" sceneMemberID="firstResponder"/>
