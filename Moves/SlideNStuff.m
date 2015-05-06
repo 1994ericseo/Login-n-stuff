@@ -33,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [TableView reloadData];
     
     
     
@@ -63,7 +64,7 @@
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
     
@@ -186,6 +187,8 @@
     Navigation.rightBarButtonItem.enabled = NO;
     TitleLabel.userInteractionEnabled = NO;
     TitleLabel.alpha = 0.2f;
+    TableView.userInteractionEnabled = NO;
+    TableView.alpha = 0.2f;
     [self.view bringSubviewToFront:AddView];
     
     //actual process
@@ -206,6 +209,8 @@
     Navigation.rightBarButtonItem.enabled = YES;
     TitleLabel.userInteractionEnabled = YES;
     TitleLabel.alpha = 1;
+    TableView.userInteractionEnabled = YES;
+    TableView.alpha = 1;
     
     [UIView commitAnimations];
 }

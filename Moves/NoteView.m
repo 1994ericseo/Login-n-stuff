@@ -74,7 +74,7 @@
     NSManagedObjectContext *context = [self managedObjectContext];
     
     if (move) {
-        //update existing car
+        //update existing move
         [move setValue:Title.text forKey:@"title"];
         [move setValue:Date.text forKey:@"date"];
         [move setValue:Note.text forKey:@"note"];
@@ -84,7 +84,7 @@
     
     
     else {
-        //create a new car
+        //create a new move
         NSManagedObject *newMove = [NSEntityDescription insertNewObjectForEntityForName:@"Moves" inManagedObjectContext:context];
         [newMove setValue:Title.text forKey:@"title"];
         [newMove setValue:Date.text forKey:@"date"];
