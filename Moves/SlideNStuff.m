@@ -115,6 +115,9 @@
      [defaults synchronize]; */
     
     [self dismissViewControllerAnimated:YES completion:NULL];
+    
+    
+    
 }
 
 - (void) imagePickerControllerDidCancel:(UIImagePickerController *)picker {

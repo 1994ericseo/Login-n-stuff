@@ -33,10 +33,6 @@
 }
 @property (strong, nonatomic) IBOutlet UITableView *TableView;
 @property (strong, nonatomic) NSMutableArray *movesArray;
-
-
-
-
 - (IBAction)GotoPhoto;
 - (IBAction)GotoVideo;
 - (IBAction)TakeFromLibrary:(id)sender;
@@ -44,11 +40,9 @@
 - (IBAction)AddStuff:(id)sender;
 - (IBAction)Cancel:(id)sender;
 - (IBAction)EditChanged;
-
-
-
-
-
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barButton;
+
+
+
 
 @end

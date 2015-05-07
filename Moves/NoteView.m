@@ -17,6 +17,7 @@
 @synthesize Date;
 @synthesize Note;
 @synthesize Media;
+@synthesize vid;
 
 @synthesize move;
 
@@ -35,6 +36,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    
+    
+    
+    
     NSDate *today = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
@@ -62,6 +69,7 @@
         [Note setText:[move valueForKey:@"note"]];
         //NEED TO CHANGE
         //[Media setImage:[move valueForKey:@"media"]];
+        vid = [move valueForKey:@"media"];
     }
     
 }
@@ -91,6 +99,7 @@
         [move setValue:Note.text forKey:@"note"];
         //NEED TO CHANGE
         //[move setValue:Media.image forKey:@"media"];
+        [move setValue:vid forKey:@"media"];
     }
     
     
@@ -102,6 +111,7 @@
         [newMove setValue:Note.text forKey:@"note"];
         //NEED TO CHANGE
         //[newMove setValue:Media.image forKey:@"media"];
+        [move setValue:vid forKey:@"media"];
     }
     
     
@@ -178,6 +188,47 @@
     Navi.rightBarButtonItem.enabled = YES;
 }
 
+
+
+- (IBAction)captureVideo:(id)sender {
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        picker.allowsEditing = YES;
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        picker.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
+        
+        [self presentViewController:picker animated:YES completion:NULL];
+    }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    self.videoURL = info[UIImagePickerControllerMediaURL];
+    
+    vid = [self.videoURL absoluteString];
+    
+    //NSURL *url = [NSURL URLWithString:urlAddress];
+    
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+    self.videoController = [[MPMoviePlayerController alloc] init];
+    
+    [self.videoController setContentURL:self.videoURL];
+    [self.videoController.view setFrame:CGRectMake (0, 0, 320, 460)];
+    [self.view addSubview:self.videoController.view];
+    
+    [self.videoController play];
+    
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
 
 
 @end
