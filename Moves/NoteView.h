@@ -23,7 +23,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *Date;
 @property (strong, nonatomic) IBOutlet UITextField *Title;
 @property (strong, nonatomic) IBOutlet UITextView *Note;
-@property (strong, nonatomic) IBOutlet UIImageView *Media;
+@property (strong, nonatomic) IBOutlet UIWebView *Media;
 @property (strong, nonatomic) NSString *vid;
 
 @property (strong) NSManagedObject *move;

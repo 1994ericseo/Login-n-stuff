@@ -69,7 +69,31 @@
         [Note setText:[move valueForKey:@"note"]];
         //NEED TO CHANGE
         //[Media setImage:[move valueForKey:@"media"]];
+        
+        
+        
+        
         vid = [move valueForKey:@"media"];
+        NSURL *url = [NSURL URLWithString:vid];
+        
+        Media.backgroundColor = [UIColor clearColor];
+        
+        self.videoController = nil;
+        CGRect rect = CGRectMake(0, 0, 375, 330);
+        
+        
+        
+        self.videoController = [[MPMoviePlayerController alloc] initWithContentURL:url];
+        [self.videoController.view setFrame:rect];
+        self.videoController.fullscreen = YES;
+        
+        
+        [self.videoController play];
+        
+        [Media addSubview:self.videoController.view];
+        
+        
+        
     }
     
 }
@@ -189,7 +213,7 @@
 }
 
 
-
+#pragma mark VIDEO
 - (IBAction)captureVideo:(id)sender {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         
@@ -205,22 +229,43 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-    self.videoURL = info[UIImagePickerControllerMediaURL];
+    NSURL *movieUrl = info[UIImagePickerControllerMediaURL];
     
-    vid = [self.videoURL absoluteString];
+    //save
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    [library writeVideoAtPathToSavedPhotosAlbum:movieUrl completionBlock:^(NSURL *assetURL, NSError *error){
+        if(error) {
+            NSLog(@"CameraViewController: Error on saving movie : %@ {imagePickerController}", error);
+        }
+        else {
+            NSLog(@"URL: %@", assetURL);
+            vid = [assetURL absoluteString];
+        }
+    }];
+
+    //vid = [movieUrl absoluteString];
     
     //NSURL *url = [NSURL URLWithString:urlAddress];
     
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
-    self.videoController = [[MPMoviePlayerController alloc] init];
     
-    [self.videoController setContentURL:self.videoURL];
-    [self.videoController.view setFrame:CGRectMake (0, 0, 320, 460)];
-    [self.view addSubview:self.videoController.view];
+    
+    Media.backgroundColor = [UIColor clearColor];
+    self.videoController = nil;
+    CGRect rect = CGRectMake(0, 0, 375, 330);
+    
+
+    
+    self.videoController = [[MPMoviePlayerController alloc] initWithContentURL:movieUrl];
+    [self.videoController.view setFrame:rect];
+    self.videoController.fullscreen = YES;
+    
     
     [self.videoController play];
+    
+    [Media addSubview:self.videoController.view];
     
 }
 
