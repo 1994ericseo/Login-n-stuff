@@ -69,31 +69,16 @@
         [Note setText:[move valueForKey:@"note"]];
         //NEED TO CHANGE
         //[Media setImage:[move valueForKey:@"media"]];
-        
-        
-        
-        
         vid = [move valueForKey:@"media"];
         NSURL *url = [NSURL URLWithString:vid];
-        
         Media.backgroundColor = [UIColor clearColor];
-        
         self.videoController = nil;
         CGRect rect = CGRectMake(0, 0, 375, 330);
-        
-        
-        
         self.videoController = [[MPMoviePlayerController alloc] initWithContentURL:url];
         [self.videoController.view setFrame:rect];
         self.videoController.fullscreen = YES;
-        
-        
         [self.videoController play];
-        
         [Media addSubview:self.videoController.view];
-        
-        
-        
     }
     
 }
@@ -199,6 +184,7 @@
 -(void)textViewDidChange:(UITextView *)textView
 {
     Note.text = theNotes.text;
+    
 }
 
 
@@ -242,29 +228,15 @@
             vid = [assetURL absoluteString];
         }
     }];
-
-    //vid = [movieUrl absoluteString];
-    
-    //NSURL *url = [NSURL URLWithString:urlAddress];
-    
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
-    
-    
-    
     Media.backgroundColor = [UIColor clearColor];
     self.videoController = nil;
     CGRect rect = CGRectMake(0, 0, 375, 330);
-    
-
-    
     self.videoController = [[MPMoviePlayerController alloc] initWithContentURL:movieUrl];
     [self.videoController.view setFrame:rect];
     self.videoController.fullscreen = YES;
-    
-    
     [self.videoController play];
-    
     [Media addSubview:self.videoController.view];
     
 }

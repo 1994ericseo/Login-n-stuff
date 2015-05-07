@@ -50,8 +50,6 @@
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
-    AddView.alpha = 0;
-    AddView.hidden = YES;
     
     
 }
@@ -68,7 +66,6 @@
     
     [super viewDidAppear:animated];
     
-    [self initialView];
     
     //here we get the moves from the persistent data source (or the database)
     NSManagedObjectContext *moc = [self managedObjectContext];
@@ -98,95 +95,13 @@
 
 
 
-#pragma Go to Photo
-- (IBAction)GotoPhoto {
-    Imagepicker = [[UIImagePickerController alloc] init];
-    Imagepicker.delegate = self;
-    Imagepicker.allowsEditing = YES;
-    [Imagepicker setSourceType:UIImagePickerControllerSourceTypeCamera];
-    [self presentViewController:Imagepicker animated:YES completion:NULL];
-}
-
-- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    //SAVE THE PHOTO
-    /*NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-     [defaults setObject:image forKey:@"savedpicture"];
-     [defaults synchronize]; */
-    
-    [self dismissViewControllerAnimated:YES completion:NULL];
-    
-    
-    
-}
-
-- (void) imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-
-#pragma Go to Video
-- (IBAction)GotoVideo {
-    [self startCameraControllerFromViewController:self usingDelegate:self];
-    //[self presentViewController:Videopicker animated:YES completion:NULL];
-}
-
-
--(BOOL)startCameraControllerFromViewController:(UIViewController*)controller
-                                 usingDelegate:(id )delegate {
-    // 1 - Validattions
-    if (([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == NO)
-        || (delegate == nil)
-        || (controller == nil)) {
-        return NO;
-    }
-    // 2 - Get image picker
-    UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
-    cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
-    // Displays a control that allows the user to choose movie capture
-    cameraUI.mediaTypes = [[NSArray alloc] initWithObjects:(NSString *)kUTTypeMovie, nil];
-    // Hides the controls for moving & scaling pictures, or for
-    // trimming movies. To instead show the controls, use YES.
-    //cameraUI.allowsEditing = NO;
-    cameraUI.allowsEditing = YES;
-    cameraUI.delegate = delegate;
-    
-    // 3 - Display image picker
-    [controller presentModalViewController: cameraUI animated: YES];
-    return YES;
-}
-
--(void)video:(NSString*)videoPath didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo {
-    if (error) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Video Saving Failed"
-                                                       delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-    } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Video Saved" message:@"Saved To Photo Album"
-                                                       delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-    }
-}
-
-#pragma From Library
-- (IBAction)TakeFromLibrary:(id)sender {
-    Imagepicker = [[UIImagePickerController alloc] init];
-    Imagepicker.delegate = self;
-    Imagepicker.allowsEditing = YES;
-    Imagepicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    Imagepicker.mediaTypes =[UIImagePickerController availableMediaTypesForSourceType:Imagepicker.sourceType];
-    [self presentViewController:Imagepicker animated:YES completion:NULL];
-}
-
-
-
 #pragma Title
 - (IBAction)Title:(id)sender {
     [self resignFirstResponder];
 }
 
 - (IBAction)AddStuff:(id)sender {
-    AddView.hidden = NO;
+    /*AddView.hidden = NO;
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
     [AddView setAlpha:1.0];
@@ -199,41 +114,17 @@
     TitleLabel.alpha = 0.2f;
     TableView.userInteractionEnabled = NO;
     TableView.alpha = 0.2f;
-    [self.view bringSubviewToFront:AddView];
+    [self.view bringSubviewToFront:AddView]; */
     
     //actual process
-}
-
-- (void)initialView {
-    [AddView setAlpha:0];
-    [self.view setAlpha:1];
-    //[AddView setHidden:YES];
-    self.view.userInteractionEnabled = YES;
-    Navigation.leftBarButtonItem.enabled = YES;
-    Navigation.rightBarButtonItem.enabled = YES;
-    TitleLabel.userInteractionEnabled = YES;
-    TitleLabel.alpha = 1;
-    TableView.userInteractionEnabled = YES;
-    TableView.alpha = 1;
-
-}
-
-- (IBAction)Cancel:(id)sender {
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.3];
-    [AddView setAlpha:0];
-    [self.view setAlpha:1];
-    //[AddView setHidden:YES];
-    self.view.userInteractionEnabled = YES;
-    Navigation.leftBarButtonItem.enabled = YES;
-    Navigation.rightBarButtonItem.enabled = YES;
-    TitleLabel.userInteractionEnabled = YES;
-    TitleLabel.alpha = 1;
-    TableView.userInteractionEnabled = YES;
-    TableView.alpha = 1;
     
-    [UIView commitAnimations];
+    
+    
 }
+
+
+
+
 
 - (IBAction)EditChanged {
     NSString *savestring = TitleLabel.text;

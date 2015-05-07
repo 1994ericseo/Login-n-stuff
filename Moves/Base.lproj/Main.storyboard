@@ -113,66 +113,6 @@
                         <rect key="frame" x="0.0" y="44" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="28j-DB-Wil">
-                                <rect key="frame" x="49" y="177" width="276" height="242"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0g-Pe-vb7">
-                                        <rect key="frame" x="48" y="131" width="61" height="64"/>
-                                        <color key="backgroundColor" red="0.99963915219999999" green="1" blue="0.91513412900000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" image="moventum-note.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="HpW-bJ-Z7M" kind="push" id="RQr-09-sI9"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwI-7I-4Ie">
-                                        <rect key="frame" x="48" y="49" width="61" height="42"/>
-                                        <color key="backgroundColor" red="0.99963915219999999" green="1" blue="0.91513412900000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" image="moventum-photo.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="GotoPhoto" destination="Ruc-yy-SRv" eventType="touchUpInside" id="ew6-e1-mW4"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0X0-J7-WBG">
-                                        <rect key="frame" x="152" y="49" width="74" height="42"/>
-                                        <color key="backgroundColor" red="0.99963915219999999" green="1" blue="0.91513412900000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" image="moventum-film.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="GotoVideo" destination="Ruc-yy-SRv" eventType="touchUpInside" id="zSu-KK-iFb"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBJ-8G-s1i">
-                                        <rect key="frame" x="0.0" y="0.0" width="29" height="26"/>
-                                        <state key="normal" image="xbutton.png">
-                                            <color key="titleColor" red="0.59625552400000004" green="0.042703498389999997" blue="0.056963192009999997" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="Cancel:" destination="Ruc-yy-SRv" eventType="touchUpInside" id="MKr-YO-oc3"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30p-9y-6c3">
-                                        <rect key="frame" x="152" y="131" width="68" height="64"/>
-                                        <color key="backgroundColor" red="0.99963915215079591" green="1" blue="0.91513412896527846" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" image="moventum-album.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="TakeFromLibrary:" destination="Ruc-yy-SRv" eventType="touchUpInside" id="rtU-2H-fTt"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.99963915219999999" green="1" blue="0.91513412900000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2yS-qA-yVg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="separatorColor" red="0.59625552400000004" green="0.042703498389999997" blue="0.056963192009999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -228,16 +168,14 @@
                         </textField>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="tJ1-xh-vBr">
                             <connections>
-                                <action selector="AddStuff:" destination="Ruc-yy-SRv" id="131-3A-e0l"/>
+                                <segue destination="HpW-bJ-Z7M" kind="show" id="Fej-gg-4mk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="AddView" destination="28j-DB-Wil" id="P9u-oK-rZF"/>
                         <outlet property="Navigation" destination="fUV-3B-vLn" id="gbJ-R5-AQP"/>
-                        <outlet property="PhotoButton" destination="qwI-7I-4Ie" id="vWD-3Z-CyY"/>
                         <outlet property="TableView" destination="2yS-qA-yVg" id="xQc-rL-NeJ"/>
                         <outlet property="TitleLabel" destination="vMM-8G-A9O" id="qxL-zJ-ePq"/>
                         <outlet property="barButton" destination="QCb-XP-hQb" id="3vR-F4-tzl"/>
@@ -453,14 +391,9 @@
     </scenes>
     <resources>
         <image name="logo.png" width="353" height="117"/>
-        <image name="moventum-album.png" width="89" height="89"/>
-        <image name="moventum-film.png" width="102" height="61"/>
-        <image name="moventum-note.png" width="77" height="84"/>
-        <image name="moventum-photo.png" width="73" height="55"/>
-        <image name="xbutton.png" width="42" height="39"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Fej-gg-4mk"/>
         <segue reference="uBk-KH-Bup"/>
-        <segue reference="gqt-GQ-mcN"/>
     </inferredMetricsTieBreakers>
 </document>

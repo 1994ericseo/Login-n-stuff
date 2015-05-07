@@ -21,9 +21,6 @@
 {
     IBOutlet UINavigationItem *Navigation;
     IBOutlet UITextField *TitleLabel;
-    IBOutlet UIView *AddView;
-    
-    IBOutlet UIButton *PhotoButton;
     
     UIImagePickerController *Imagepicker;
     UIImage *image;
@@ -33,12 +30,8 @@
 }
 @property (strong, nonatomic) IBOutlet UITableView *TableView;
 @property (strong, nonatomic) NSMutableArray *movesArray;
-- (IBAction)GotoPhoto;
-- (IBAction)GotoVideo;
-- (IBAction)TakeFromLibrary:(id)sender;
 - (IBAction)Title:(id)sender;
 - (IBAction)AddStuff:(id)sender;
-- (IBAction)Cancel:(id)sender;
 - (IBAction)EditChanged;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barButton;
 
