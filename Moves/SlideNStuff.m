@@ -100,31 +100,6 @@
     [self resignFirstResponder];
 }
 
-- (IBAction)AddStuff:(id)sender {
-    /*AddView.hidden = NO;
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.3];
-    [AddView setAlpha:1.0];
-    //[self.view setAlpha:0.8f];
-    [UIView commitAnimations];
-    //make all buttons Disabled plz
-    Navigation.leftBarButtonItem.enabled = NO;
-    Navigation.rightBarButtonItem.enabled = NO;
-    TitleLabel.userInteractionEnabled = NO;
-    TitleLabel.alpha = 0.2f;
-    TableView.userInteractionEnabled = NO;
-    TableView.alpha = 0.2f;
-    [self.view bringSubviewToFront:AddView]; */
-    
-    //actual process
-    
-    
-    
-}
-
-
-
-
 
 - (IBAction)EditChanged {
     NSString *savestring = TitleLabel.text;

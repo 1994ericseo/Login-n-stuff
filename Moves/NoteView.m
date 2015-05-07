@@ -64,9 +64,6 @@
     
     
     if (move) {
-        
-        NSLog(@"again");
-        
         [Title setText:[move valueForKey:@"title"]];
         [Date setText:[move valueForKey:@"date"]];
         [Note setText:[move valueForKey:@"note"]];
@@ -106,9 +103,6 @@
     
     if (move) {
         //update existing move
-        NSLog(@"update");
-        
-        
         [move setValue:Title.text forKey:@"title"];
         [move setValue:Date.text forKey:@"date"];
         [move setValue:Note.text forKey:@"note"];
@@ -120,8 +114,6 @@
     
     else {
         //create a new move
-        NSLog(@"create");
-        
         NSManagedObject *newMove = [NSEntityDescription insertNewObjectForEntityForName:@"Moves" inManagedObjectContext:context];
         [newMove setValue:Title.text forKey:@"title"];
         [newMove setValue:Date.text forKey:@"date"];
@@ -226,11 +218,26 @@
 }
 
 
+#pragma mark LIBRARY
+- (IBAction)TakeFromLibrary:(id)sender {
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    //picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.mediaTypes =[UIImagePickerController availableMediaTypesForSourceType:picker.sourceType];
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+
+
 #pragma mark VIDEO
 - (IBAction)captureVideo:(id)sender {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        
         picker.delegate = self;
         picker.allowsEditing = YES;
         picker.sourceType = UIImagePickerControllerSourceTypeCamera;

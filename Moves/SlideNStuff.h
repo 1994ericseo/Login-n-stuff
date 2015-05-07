@@ -31,7 +31,6 @@
 @property (strong, nonatomic) IBOutlet UITableView *TableView;
 @property (strong, nonatomic) NSMutableArray *movesArray;
 - (IBAction)Title:(id)sender;
-- (IBAction)AddStuff:(id)sender;
 - (IBAction)EditChanged;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barButton;
 
