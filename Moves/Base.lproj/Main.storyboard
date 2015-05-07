@@ -206,25 +206,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter notes here" translatesAutoresizingMaskIntoConstraints="NO" id="1f9-Pd-NDL">
-                                <rect key="frame" x="0.0" y="437" width="375" height="166"/>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3gR-cP-XQJ">
+                                <rect key="frame" x="0.0" y="108" width="375" height="330"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter Move Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DVe-Gi-SVb">
-                                <rect key="frame" x="0.0" y="62" width="375" height="45"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sR-IC-AUR">
-                                <rect key="frame" x="16" y="27" width="157" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlb-vZ-pUK">
+                                <rect key="frame" x="236" y="9" width="47" height="46"/>
+                                <state key="normal" title="Button" image="moventum-album.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="226-ks-sA6">
+                                <rect key="frame" x="307" y="12" width="52" height="43"/>
+                                <state key="normal" title="Button" image="moventum-film.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="captureVideo:" destination="HpW-bJ-Z7M" eventType="touchUpInside" id="reD-F8-bNy"/>
+                                </connections>
+                            </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tca-Jh-eWY">
-                                <rect key="frame" x="313" y="70" width="46" height="30"/>
+                                <rect key="frame" x="138" y="297" width="98" height="30"/>
                                 <color key="backgroundColor" red="0.59625552400000004" green="0.042703498389999997" blue="0.056963192009999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -234,26 +236,33 @@
                                     <action selector="finishText:" destination="HpW-bJ-Z7M" eventType="touchUpInside" id="bWN-9O-UXM"/>
                                 </connections>
                             </button>
-                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter notes here" translatesAutoresizingMaskIntoConstraints="NO" id="Kcm-5w-v90">
-                                <rect key="frame" x="8" y="18" width="358" height="63"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sR-IC-AUR">
+                                <rect key="frame" x="16" y="27" width="157" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter notes here" translatesAutoresizingMaskIntoConstraints="NO" id="1f9-Pd-NDL">
+                                <rect key="frame" x="0.0" y="437" width="375" height="166"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter notes here" translatesAutoresizingMaskIntoConstraints="NO" id="Kcm-5w-v90">
+                                <rect key="frame" x="8" y="115" width="358" height="174"/>
+                                <color key="backgroundColor" red="0.99963915219999999" green="1" blue="0.91513412900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="226-ks-sA6">
-                                <rect key="frame" x="313" y="18" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter Move Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DVe-Gi-SVb">
+                                <rect key="frame" x="0.0" y="62" width="375" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
-                                    <action selector="captureVideo:" destination="HpW-bJ-Z7M" eventType="touchUpInside" id="reD-F8-bNy"/>
+                                    <action selector="titleDismiss:" destination="HpW-bJ-Z7M" eventType="editingDidEndOnExit" id="J3O-Hw-Tco"/>
                                 </connections>
-                            </button>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3gR-cP-XQJ">
-                                <rect key="frame" x="0.0" y="107" width="375" height="330"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -277,7 +286,9 @@
                         <outlet property="Media" destination="3gR-cP-XQJ" id="EFx-6G-kNa"/>
                         <outlet property="Navi" destination="yQy-AH-eGz" id="a3c-lb-9m7"/>
                         <outlet property="Note" destination="1f9-Pd-NDL" id="Md2-Wf-6su"/>
+                        <outlet property="RollButton" destination="rlb-vZ-pUK" id="WQl-cY-XNE"/>
                         <outlet property="Title" destination="DVe-Gi-SVb" id="xvb-S3-8II"/>
+                        <outlet property="VideoButton" destination="226-ks-sA6" id="PYg-fd-3EZ"/>
                         <outlet property="done" destination="tca-Jh-eWY" id="lCl-78-aGo"/>
                         <outlet property="theNotes" destination="Kcm-5w-v90" id="fqJ-vO-5d3"/>
                     </connections>
@@ -391,6 +402,8 @@
     </scenes>
     <resources>
         <image name="logo.png" width="353" height="117"/>
+        <image name="moventum-album.png" width="89" height="89"/>
+        <image name="moventum-film.png" width="102" height="61"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Fej-gg-4mk"/>

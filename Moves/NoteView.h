@@ -17,6 +17,10 @@
     IBOutlet UITextView *theNotes;
     IBOutlet UIButton *done;
     IBOutlet UINavigationItem *Navi;
+    
+    
+    IBOutlet UIButton *VideoButton;
+    IBOutlet UIButton *RollButton;
 }
 
 
@@ -39,5 +43,13 @@
 @property (strong, nonatomic) MPMoviePlayerController *videoController;
 
 - (IBAction)captureVideo:(id)sender;
+
+
+- (IBAction)titleDismiss:(id)sender;
+
+
+
+
+
 
 @end

@@ -64,6 +64,9 @@
     
     
     if (move) {
+        
+        NSLog(@"again");
+        
         [Title setText:[move valueForKey:@"title"]];
         [Date setText:[move valueForKey:@"date"]];
         [Note setText:[move valueForKey:@"note"]];
@@ -103,6 +106,9 @@
     
     if (move) {
         //update existing move
+        NSLog(@"update");
+        
+        
         [move setValue:Title.text forKey:@"title"];
         [move setValue:Date.text forKey:@"date"];
         [move setValue:Note.text forKey:@"note"];
@@ -114,13 +120,15 @@
     
     else {
         //create a new move
+        NSLog(@"create");
+        
         NSManagedObject *newMove = [NSEntityDescription insertNewObjectForEntityForName:@"Moves" inManagedObjectContext:context];
         [newMove setValue:Title.text forKey:@"title"];
         [newMove setValue:Date.text forKey:@"date"];
         [newMove setValue:Note.text forKey:@"note"];
         //NEED TO CHANGE
         //[newMove setValue:Media.image forKey:@"media"];
-        [move setValue:vid forKey:@"media"];
+        [newMove setValue:vid forKey:@"media"];
     }
     
     
@@ -167,17 +175,28 @@
         textView.textColor = [UIColor blackColor]; //optional
     }
     
+    
     theNotes.hidden = NO;
+    [[UIApplication sharedApplication].keyWindow bringSubviewToFront:theNotes];
     [theNotes becomeFirstResponder];
     done.hidden = NO;
     Title.enabled = NO;
     Title.alpha = 0.2f;
+    Date.alpha = 0.2f;
     Navi.leftBarButtonItem.enabled = NO;
     Navi.rightBarButtonItem.enabled = NO;
+    RollButton.enabled = NO;
+    RollButton.alpha = 0.2f;
+    VideoButton.enabled = NO;
+    VideoButton.alpha = 0.2f;
+    Media.userInteractionEnabled = NO;
+    Media.alpha = 0.2f;
     
 }
 
 -(void)textViewDidEndEditing:(UITextView *)textView {
+    [Note resignFirstResponder];
+    [theNotes resignFirstResponder];
     
 }
 
@@ -190,12 +209,20 @@
 
 - (IBAction)finishText:(id)sender {
     [theNotes resignFirstResponder];
+    [Note resignFirstResponder];
     theNotes.hidden = YES;
     done.hidden = YES;
     Title.enabled = YES;
     Title.alpha = 1;
+    Date.alpha = 1;
     Navi.leftBarButtonItem.enabled = YES;
     Navi.rightBarButtonItem.enabled = YES;
+    RollButton.enabled = YES;
+    RollButton.alpha = 1;
+    VideoButton.enabled = YES;
+    VideoButton.alpha = 1;
+    Media.userInteractionEnabled = YES;
+    Media.alpha = 1;
 }
 
 
@@ -212,6 +239,12 @@
         [self presentViewController:picker animated:YES completion:NULL];
     }
 }
+
+- (IBAction)titleDismiss:(id)sender {
+    
+    [Title resignFirstResponder];
+}
+
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
