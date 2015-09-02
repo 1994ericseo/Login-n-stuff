@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-#import "MainScreen.h"
+
 
 
 @interface ViewController : UIViewController
@@ -17,15 +17,18 @@
     IBOutlet UITextField *PasswordField;
     IBOutlet UIButton *SignInButton;
     IBOutlet UIActivityIndicatorView *ActivityIndicator;
+    IBOutlet UIButton *ForgotPassword;
+    IBOutlet UIButton *CreateSignButton;
+    IBOutlet UIImageView *TitleLogo;
     
     NSDictionary *LoginDictionary;
 }
 
 - (IBAction)LoginButton;
-- (IBAction)Username:(id)sender;
-- (IBAction)Password:(id)sender;
 - (IBAction)FinishedUsername:(id)sender;
 - (IBAction)FinishedPassword:(id)sender;
+- (IBAction)CreateOrSign:(id)sender;
+
 
 
 

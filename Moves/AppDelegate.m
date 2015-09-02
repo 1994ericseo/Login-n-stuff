@@ -28,7 +28,26 @@
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    sleep(1);
+    sleep(2);
+    
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    
+    NSString *logz = @"login";
+    BOOL isRunning = [[NSUserDefaults standardUserDefaults] boolForKey:@"is_loggedon"];
+    if (isRunning) {
+        logz = @"sw";
+    }
+    
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:logz];
+    
+    self.window.rootViewController = viewController;
+    [self.window makeKeyAndVisible];
+    
+    
+    
+    
     
     return YES;
 }
